@@ -2,3 +2,15 @@
 // ---------------------------
 // TYPOGRAPHY STYLES -----------
 // ---------------------------
+
+
+
+// Font weight class generation - 800
+
+$font-weight: font-weight !default;
+
+@for $i from 1 through 8{
+  [ #{$font-weight}-#{$i} ]{
+    font-weight: ($i*100);
+  }
+}
