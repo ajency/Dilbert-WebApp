@@ -2,3 +2,21 @@
 // ---------------------------
 // NAVIGATION STYLES -----------
 // ---------------------------
+
+
+// Main navigation
+
+.dilbert-nav{
+	// Which holds icon and title
+	.toolbar-content{
+		display: flex; //To hold-up contents horizontally and center to each other
+		justify-content: space-between;
+	}
+	.brand-name{
+		flex: initial; //To take space only as much as required
+	}
+	.nav-cols{
+		display: flex;
+		align-items: center;
+	}
+}
