@@ -35,6 +35,7 @@ $grid-gutter-width: 30px;
 $screen-sm-min: 768px;
 $screen-md-min: 992px;
 $screen-lg-min: 1200px;
+$screen-lg-max: 1400px;
 
 /* Container width and media variables */
 
@@ -52,6 +53,12 @@ $container-md:                 $container-desktop;
 $container-large-desktop:      (1140px + $grid-gutter-width);
 //** For `@screen-lg-min` and up.
 $container-lg:                 $container-large-desktop;
+
+// Large screen / wide desktop
+$container-large-xl-desktop:      (1300px + $grid-gutter-width);
+//** For `@screen-lg-min` and up.
+$container-lg-max:                 $container-large-xl-desktop;
+
 
 
 /**
@@ -112,6 +119,9 @@ $fg-breakpoints: (
   }
   @media (min-width: $screen-lg-min) {
     width: $container-lg;
+  }
+  @media (min-width: $screen-lg-max) {
+    width: $container-lg-max;
   }
 }
 
