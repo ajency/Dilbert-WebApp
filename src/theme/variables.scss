@@ -12,6 +12,8 @@ $font-path: "../assets/fonts";
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
+$toolbar-md-height: 65px !default;
+
 
 
 
@@ -28,7 +30,8 @@ $colors: (
   secondary:  #fbce29,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  transparent: transparent
 );
 
 
