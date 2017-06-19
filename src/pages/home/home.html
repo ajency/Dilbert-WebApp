@@ -8,7 +8,6 @@
          <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
          </button>
-         <!-- <ion-title>Home</ion-title> -->
          <div class="dilber-nav__left nav-cols">
             <button ion-button icon-only clear>
                <ion-icon name="ios-flower" color="dark"></ion-icon>
@@ -37,7 +36,26 @@
 <!-- Body starts -->
 
 <ion-content padding>
-   <div class="container">
+   <div class="container" p-h-30>
+      <ion-chip class="db-status active">
+         <ion-label text-capitalize font-weight-5>@Ajency</ion-label>
+      </ion-chip>
+      <ion-chip class="db-status planned">
+         <ion-label text-uppercase font-weight-5>Planned</ion-label>
+      </ion-chip>
+      <ion-chip class="db-status un-planned">
+         <ion-label text-uppercase font-weight-5>Un-planned</ion-label>
+      </ion-chip>
+      <ion-chip class="db-status planning">
+         <ion-label text-uppercase font-weight-5>Planning</ion-label>
+      </ion-chip>
+
+      <ion-list>
+         <ion-item>
+            <ion-label color="primary" floating>Floating Label</ion-label>
+               <ion-input></ion-input>
+            </ion-item>
+      </ion-list>
    </div>
 </ion-content>
 
