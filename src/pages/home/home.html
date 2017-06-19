@@ -1,7 +1,7 @@
 
 <!-- Site header goes here -->
 
-<ion-header>
+<ion-header class="main-header shadow-1">
    <div class="container">
       <!-- Navbar Start-->
       <ion-navbar class="dilbert-nav">
@@ -11,12 +11,12 @@
          <!-- <ion-title>Home</ion-title> -->
          <div class="dilber-nav__left nav-cols">
             <button ion-button icon-only clear>
-               <ion-icon name="flower" color="dark"></ion-icon>
+               <ion-icon name="ios-flower" color="dark"></ion-icon>
             </button>   
             <button ion-button icon-only clear>
-               <ion-icon name="flower" color="dark"></ion-icon>
+               <ion-icon name="ios-cog" color="dark"></ion-icon>
             </button>
-            <ion-title start font-weight-4 class="brand-name"><h4 class="text-secondary">Ajency.in</h4></ion-title>
+            <ion-title start font-weight-4 class="brand-name"><h4 class="text-secondary" color="secondary">Ajency.in</h4></ion-title>
          </div>
          <div class="dilbert-nav__right nav-cols">
             <button ion-button icon-only clear>
@@ -37,19 +37,24 @@
 <!-- Body starts -->
 
 <ion-content padding>
-   <div class="container" padding-horizontal>
-     <!--  <h3>Ionic Menu Starter</h3>
+   <div class="container">
+<!--       <h3>Ionic Menu Starter</h3>
       <ion-grid class="grid">
          <ion-row class="row">
-            <ion-col class="col" col-6 col-sm-6>
+            <ion-col class="col" col-12 col-sm-6>
                1
             </ion-col>
-            <ion-col class="col" col-6 col-sm-6>
+            <ion-col class="col" col-12 col-sm-6>
                1
             </ion-col>
          </ion-row>
       </ion-grid>
       <button ion-button secondary menuToggle>Toggle Menu</button> -->
+      <button ion-button color="light">Light</button>
+<button ion-button>Default</button>
+<button ion-button color="secondary">Secondary</button>
+<button ion-button color="danger">Danger</button>
+<button ion-button color="dark">Dark</button>
    </div>
 </ion-content>
 
