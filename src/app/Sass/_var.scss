@@ -1,12 +1,58 @@
 
 // ---------------------------
-// VARIBALES CALLS -----------
+// VARIABLE CALLS -----------
 // ---------------------------
 
 
 // Primary Color
-$accent-primary: #8354d5;
+$accent-primary: #6943bf;
 
 // Secondary Color
-$accent-secondary: #fbce29;
+$accent-secondary: #facf21;
 
+
+// Box Shadow 
+$shadow-1: 0px 0px 20px 0px rgba(0,0,0,0.15);
+
+
+// ---------------------------
+// DEFAULT CONTAINER AND MEDIA SETUP -----------
+// ---------------------------
+
+
+$screen-sm-min: 768px;
+
+$screen-md-min: 992px;
+
+$screen-lg-min: 1200px;
+
+$screen-lg-max: 1400px;
+
+$grid-gutter-width: 30px;
+
+
+
+// ---------------------------
+// CONTAINER WIDTH AND MEDIA VARIABLES -----------
+// ---------------------------
+
+
+// Small screen / tablet
+$container-tablet:             (720px + $grid-gutter-width);
+//** For `@screen-sm-min` and up.
+$container-sm:                 $container-tablet;
+
+// Medium screen / desktop
+$container-desktop:            (940px + $grid-gutter-width);
+//** For `@screen-md-min` and up.
+$container-md:                 $container-desktop;
+
+// Large screen / wide desktop
+$container-large-desktop:      (1140px + $grid-gutter-width);
+//** For `@screen-lg-min` and up.
+$container-lg:                 $container-large-desktop;
+
+// Large screen / wide desktop
+$container-large-xl-desktop:      (1300px + $grid-gutter-width);
+//** For `@screen-lg-min` and up.
+$container-lg-max:                 $container-large-xl-desktop;
