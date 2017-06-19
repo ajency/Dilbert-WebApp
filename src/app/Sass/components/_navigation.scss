@@ -44,3 +44,22 @@
 		font-size: 0.9em;
 	}
 }
+
+
+// Notification indicator
+
+.notify{
+	.icon{
+		position: relative;
+		&:after{
+			content: '';
+			position: absolute;
+			height: 7px;
+			width: 7px;
+			border-radius: 50%;
+			background-color: $accent-primary;
+			top: -7px;
+    		right: 7px;
+		}
+	}
+}
