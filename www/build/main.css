@@ -49213,8 +49213,8 @@ p {
 
 .container {
   margin: 0 auto;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 @media (max-width: 767px) {
