@@ -7,6 +7,10 @@
 // Main navigation
 
 .dilbert-nav{
+	// hamburger menu
+	.ham{
+		min-width: inherit;
+	}
 	// Which holds icon and title
 	.toolbar-content{
 		display: flex; //To hold-up contents horizontally and center to each other
