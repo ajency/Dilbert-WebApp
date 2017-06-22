@@ -20,7 +20,17 @@ $toolbar-md-height: 65px !default;
 $toolbar-background: #fff !default;
 
 // Heading Font-size 
-$h1-font-size: 2.6em;
+$h1-font-size: 3em;
+
+$h2-font-size: 2.8em;
+
+$h3-font-size: 2.6em;
+
+$h4-font-size: 2.1em;
+
+$h5-font-size: 1.8em;
+
+$h6-font-size: 1.5em;
 
 // Named Color Variables
 // --------------------------------------------------
@@ -39,7 +49,7 @@ $colors: (
   success:    	#03b8b2,
   info:       	#32394b,
   mute:       	#f0f1f6,
-  text:       	#8e8f93,
+  text:       	#868686,
   text-lighter: #aeb3b9,
   cloud:        #fff,
   transparent: 	transparent

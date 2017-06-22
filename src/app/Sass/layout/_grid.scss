@@ -45,7 +45,7 @@
 
 $i: 0;
 
-@while $i <= 30 { /*want loop to extend change this value*/
+@while $i <= 50 { /*want loop to extend change this value*/
 
   // Margin-all
   ion-app.app-root [m-t-#{$i}] { margin-top: 1px * $i; }

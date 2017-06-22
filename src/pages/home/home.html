@@ -9,13 +9,13 @@
             <ion-icon name="menu"></ion-icon>
          </button>
          <div class="dilber-nav__left nav-cols">
-            <button ion-button icon-only clear>
-               <ion-icon name="ios-flower" color="dark"></ion-icon>
+            <button ion-button icon-only clear p-h-10>
+               <i class="custom-icon flower"></i>
             </button>   
-            <button ion-button icon-only clear>
-               <ion-icon name="ios-cog" color="dark"></ion-icon>
+            <button ion-button icon-only clear p-h-10>
+               <i class="custom-icon summary"></i>
             </button>
-            <ion-title start font-weight-4 class="brand-name"><h4 ion-text color="secondary">Ajency.in</h4></ion-title>
+            <ion-title start font-weight-4 class="brand-name"><p ion-text color="secondary" m-0>Ajency.in</p></ion-title>
          </div>
          <div class="dilbert-nav__right nav-cols">
             <!-- Notification -->
@@ -44,92 +44,173 @@
 <!-- Body starts -->
 
 <ion-content padding>
-   <div class="container">
+   <div class="container" p-h-20>
 
-      <br>
-      <ion-chip class="db-status active">
-         <ion-label text-capitalize font-weight-5>@Ajency</ion-label>
-      </ion-chip>
-      <ion-chip class="db-status planned">
-         <ion-label text-uppercase font-weight-5>Planned</ion-label>
-      </ion-chip>
-      <ion-chip class="db-status un-planned">
-         <ion-label text-uppercase font-weight-5>Un-planned</ion-label>
-      </ion-chip>
-      <ion-chip class="db-status planning">
-         <ion-label text-uppercase font-weight-5>Planning</ion-label>
-      </ion-chip>
-
-      <ion-list>
-         <ion-item>
-            <ion-label color="primary" floating>Floating Label</ion-label>
-            <ion-input></ion-input>
-         </ion-item>
-      </ion-list>
-      
-      <div class="avatar-group">
-         <ion-avatar class="avatar-group__list">
-            <img class="avatar-img" src="https://ionicframework.com/dist/preview-app/www/assets/img/avatar-finn.png" />
-         </ion-avatar>
-         <ion-avatar class="avatar-group__list">
-            <img class="avatar-img" src="https://ionicframework.com/dist/preview-app/www/assets/img/avatar-han.png" />
-         </ion-avatar>
-         <ion-avatar class="avatar-group__list">
-            <img class="avatar-img" src="https://ionicframework.com/dist/preview-app/www/assets/img/avatar-rey.png" />
-         </ion-avatar>
-         <ion-avatar class="avatar-group__list">
-            <img class="avatar-img" src="https://ionicframework.com/dist/preview-app/www/assets/img/avatar-luke.png" />
-         </ion-avatar>
-         <h4 class="plus-more" m-l-12>+3 more</h4>
-      </div>
-      
-      <br>
-
-      <button ion-button>Default</button>
-
-      <button ion-button color="secondary">Default</button>
-
-      <button ion-button outline>Default</button>
-
-      <button ion-button color="secondary" outline>Default</button>
-      
-      <br><br>
-
-      <button ion-button full>Default</button>
-
-      <br><br>
-
-      <button ion-button small color="secondary">Default</button>
-      
-      <button ion-button small color="danger">Default</button>
-
-      <button ion-button large color="primary">Default</button>      
-      
-      <div class="form-elements">
-         <ion-item>
-           <ion-select [(ngModel)]="gender" interface="popover">
-           <ion-option value="a">All</ion-option>
-             <ion-option value="f">Female</ion-option>
-             <ion-option value="m">Male</ion-option>
-           </ion-select>
-         </ion-item>
-                
-         <ion-item>
-             <ion-input placeholder="Text Input"></ion-input>
-         </ion-item>
-
-         <ion-item>
-            <ion-label color="primary" stacked>Stacked Label</ion-label>
-            <ion-input type="email" placeholder="Email Input"></ion-input>
-         </ion-item>
-
-         <ion-item>
-            <ion-input placeholder="Clear Input" clearInput></ion-input>
-         </ion-item>
-
-      </div>
-
-
+      <ion-grid class="grid dashboard" m-t-15>
+         <ion-row class="row dashboard__row">
+            <ion-col class="col" col-12 m-b-20>
+               <!-- Heading -->
+               <div class="section-title">
+                  <i class="custom-icon summary" m-r-10></i><h6 font-weight-3>My Summary</h6>
+               </div>
+            </ion-col>               
+            <ion-col class="col dashboard__summary" col-8 p-h-0 p-v-0>
+               <!-- Summary section -->
+               <div class="summary">
+                  <div class="summary__sidebar" p-h-20 p-v-10>
+                    <!-- Week Container -->
+                     <div class="week">
+                        <!-- Current week -->
+                        <div class="week__current current-card">
+                           <div class="current-card__header flex-row">
+                              <p ion-text color="primary" m-0>This Week</p>
+                              <p ion-text m-0 color="text">43.43hr/45hr</p>
+                              <div class="week-loader" style="width: 80%"></div>
+                           </div>
+                           <div class="current-card__body flex-row" p-v-25>
+                              <h3 class="time" m-t-0 p-r-40>3:02<span class="xxx-small">hr</span></h3>
+                              <div class="day">
+                                 <p ion-text color="primary" m-0 m-b-5>Today</p>
+                                 <span ion-text color="text">Friday 12, May</span>
+                              </div>
+                           </div>
+                           <div class="current-card__footer flex-row">
+                             <div class="timing in" p-h-15 p-v-15>
+                                <i class="custom-icon indoor"></i> <span>9:35am</span>
+                             </div>
+                             <div class="timing out" p-h-15 p-v-15>
+                                <i class="custom-icon outdoor"></i> <span ion-text color="success">Online</span>
+                             </div>
+                           </div>
+                        </div>
+                        <!-- Current week ends -->
+                        <!-- Full week -->
+                        <div class="week__full full-card">
+                          <div class="full-card__header flex-row">
+                            <p m-0>This Week</p>
+                            <button ion-button clear><ion-icon name="calendar" color="text"></ion-icon></button>
+                          </div>
+                          <div class="full-card__body">
+                            <!-- Week list -->
+                            <ul class="week-list">
+                              <li class="week-list__row flex-row" m-v-20>
+                                <div class="week-list__day">
+                                  <p m-0 m-b-8 font-weight-5>Fri</p>
+                                  <span ion-text color="text">May 12</span>
+                                </div>
+                                <div class="week-list__session">
+                                  <span class="dis-block" m-b-8>09:35 am</span>
+                                  <span ion-text color="success">Online</span>
+                                </div>
+                                <div class="week-list__time flex-row">
+                                  <ion-icon name="alert" color="danger" class="visible"></ion-icon>
+                                  <h6 p-h-12 ion-text color="text">3:02<span class="xx-small" p-l-2 font-weight-4>hr</span></h6>
+                                  <ion-icon name="arrow-forward"></ion-icon>
+                                </div>
+                              </li>
+                              <li class="week-list__row flex-row" m-v-20>
+                                <div class="week-list__day">
+                                  <p m-0 m-b-8 font-weight-5>Thu</p>
+                                  <span ion-text color="text">May 11</span>
+                                </div>
+                                <div class="week-list__session">
+                                  <span class="dis-block" m-b-8>09:28 am</span>
+                                  <span ion-text>6:28pm</span>
+                                </div>
+                                <div class="week-list__time flex-row">
+                                  <i data-tooltip="Please update your details"><ion-icon name="alert" color="danger"></ion-icon></i>
+                                  <h6 p-h-12 ion-text color="text">9:00<span class="xx-small" p-l-2 font-weight-4>hr</span></h6>
+                                  <ion-icon name="arrow-forward"></ion-icon>
+                                </div>
+                              </li>
+                              <li class="week-list__row flex-row active" m-v-20>
+                                <div class="week-list__day">
+                                  <p m-0 m-b-8 font-weight-5>Wed</p>
+                                  <span ion-text color="text">May 10</span>
+                                </div>
+                                <div class="week-list__session">
+                                  <span class="dis-block" m-b-8 ion-text color="primary">09:45 am</span>
+                                  <span ion-text>7:13 pm</span>
+                                </div>
+                                <div class="week-list__time flex-row">
+                                  <ion-icon name="alert" color="danger"></ion-icon>
+                                  <h6 p-h-12 ion-text color="text">9:27<span class="xx-small" p-l-2 font-weight-4>hr</span></h6>
+                                  <ion-icon name="arrow-forward"></ion-icon>
+                                </div>
+                              </li>
+                              <li class="week-list__row flex-row" m-v-20>
+                                <div class="week-list__day">
+                                  <p m-0 m-b-8 font-weight-5>Tue</p>
+                                  <span ion-text color="text">May 09</span>
+                                </div>
+                                <div class="week-list__session">
+                                  <span class="dis-block" m-b-8>09:40 am</span>
+                                  <span ion-text color="primary">6:45 pm</span>
+                                </div>
+                                <div class="week-list__time flex-row">
+                                  <ion-icon name="checkmark-circle" color="text"></ion-icon>
+                                  <h6 p-h-12 ion-text color="text">9:05<span class="xx-small" p-l-2 font-weight-4>hr</span></h6>
+                                  <ion-icon name="arrow-forward"></ion-icon>
+                                </div>
+                              </li>
+                              <li class="week-list__row flex-row" m-v-20>
+                                <div class="week-list__day">
+                                  <p m-0 m-b-8 font-weight-5>Mon</p>
+                                  <span ion-text color="text">May 08</span>
+                                </div>
+                                <div class="week-list__session">
+                                  <span class="dis-block" m-b-8>09:24 am</span>
+                                  <span ion-text>6:40 pm</span>
+                                </div>
+                                <div class="week-list__time flex-row">
+                                  <ion-icon name="checkmark-circle" color="success"></ion-icon>
+                                  <h6 p-h-12 ion-text color="text">9:16<span class="xx-small" p-l-2 font-weight-4>hr</span></h6>
+                                  <ion-icon name="arrow-forward"></ion-icon>
+                                </div>
+                              </li>
+                              <!-- View More -->
+                              <li class="view-more" text-center>
+                                <button ion-button clear color="text">
+                                  <span class="dis-block" text-capitalize font-weight-4>View More</span>
+                                  <ion-icon name="arrow-down" m-t-8></ion-icon>
+                                </button>  
+                              </li>
+                              <!-- View More ends -->
+                            </ul>
+                            <!-- Week list ends -->
+                          </div>
+                        </div>
+                        <!-- Full week ends -->
+                     </div>
+                  </div>
+                  <div class="summary__content" p-h-20 p-v-10>
+                     <p font-weight-5 m-t-12 m-b-20>The Summary :</p>
+                     <div class="day-detail flex-row">
+                       <div class="day-detail__day detail-cols">
+                         <h6 m-t-10 m-b-12>Wednesday</h6>
+                         <span ion-text color="text">Day</span>
+                       </div>
+                       <div class="day-detail__start-time detail-cols">
+                         <p font-weight-5>09:40 am</p>
+                         <span ion-text color="text">Start time</span>
+                       </div>
+                       <div class="day-detail__end-time detail-cols">
+                         <p font-weight-5>06:45 pm</p>
+                         <span ion-text color="text">End time</span>
+                       </div>
+                       <div class="day-detail__total-time detail-cols">
+                         <h6 m-t-10 m-b-12 ion-text color="primary">09:05<span class="xx-small">hrs</span></h6>
+                         <span ion-text color="text">Total time</span>
+                       </div>
+                     </div>
+                  </div>
+               </div>
+            </ion-col>
+            <ion-col class="col dashboard__leaves" col-4 p-h-0 p-v-0>
+               
+            </ion-col>
+         </ion-row>
+      </ion-grid>
 
    </div>
 </ion-content>

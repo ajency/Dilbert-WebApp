@@ -37,19 +37,31 @@ page-home {
 	}
 	&__content{
 		flex: 1.7;
+		@media screen and (min-width: 1400px) {
+			flex: 2;
+		}
+		@media screen and (min-width: 1601px) {
+			flex: 2.3;
+		}
 	}
 }
 
 
 // Week Left sidebar
 
+.flex-row{
+	display: flex;
+	align-items: center;
+}
+
+
+// Current top level card
+
 .current-card{
 	&__header{
-		display: flex;
-		align-items: center;
 		justify-content: space-between;
-		margin: 0 -15px;
-		padding: 10px 15px 15px 15px;
+		margin: 0 -20px;
+		padding: 10px 20px 20px 20px;
     	border-bottom: 3px solid #eee;
     	position: relative;
 	}
@@ -62,14 +74,126 @@ page-home {
 	    transition: all 0.8s ease;
 	}
 	&__body{
-		display: flex;
-    	align-items: center;
-    	justify-content: space-around;
+    	justify-content: center;
     	sub{
     		font-size: 0.55em;
     	}
 	}
+	&__footer{
+    	justify-content: center;
+    	text-align: center;
+    	margin: 0 -20px;
+    	border-top: 2px solid #f6f5f8;
+	}
+	.timing{
+		flex: 1;
+		text-align: center;
+		font-size: 1.1em;
+		.icon{
+			vertical-align: middle;
+		}
+		&.in{
+			border-right: 2px solid #f6f5f8;
+		}
+	}
 }
+
+
+// Custom icon
+
+.custom-icon{
+	display: inline-block;
+	height: 28px;
+	width: 24px;
+	background-image: url('../assets/img/sprite.png');
+	background-repeat: no-repeat;
+	background-size: 240%;
+	vertical-align: middle;
+	&.indoor{
+		background-position: -27px -96px;
+	}
+	&.outdoor{
+		background-position: -32px -125px;
+	}
+	&.summary{
+		width: 28px;
+    	background-position: -24px -55px;
+    	background-size: 180%;
+	}
+	&.flower{
+		background-position: 0px 0;
+    	width: 26px;
+    	background-size: 200%;
+	}
+}
+
+
+
+// Full week card
+
+.full-card{
+	&__header{
+		justify-content: space-between;
+	    margin: 0 -20px;
+	    padding: 5px 20px;
+	    background-color: #f8f8fa;
+	    border-top: 2px solid #f6f5f8;
+	    border-bottom: 2px solid #f6f5f8;
+	    .icon{
+	    	font-size: 1.6em;
+	    }
+	}
+	.week-list{
+		&__row{
+			justify-content: space-between;
+			margin: 0 -20px;
+    		padding: 10px 20px;
+		}
+		&__time{
+			.icon{
+				font-size: 1.75em;
+			}
+		}
+		.active{
+			background-color: lighten(color($colors,primary),45%);
+			border-left: 3px solid color($colors,primary);
+			box-shadow: $shadow-3;
+		}
+	}
+}
+
+// Summary content
+
+.day-detail{
+	.detail-cols{
+		flex: 1;
+		text-align: center;
+	}
+}
+
+
+// View More
+
+.view-more{
+	.button{
+		height: inherit;
+	}
+	.button-inner{
+		flex-direction: column;
+	}
+	.icon{
+		font-size: 1.6em;
+	}			
+}
+
+
+
+
+
+
+
+
+
 
 
 
