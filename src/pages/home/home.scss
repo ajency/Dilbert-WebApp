@@ -27,6 +27,12 @@ page-home {
 }
 
 
+// main title heading
+.main-title{
+	font-size: 1.25em;
+}
+
+
 // Summary section
 
 .summary{
@@ -151,7 +157,7 @@ page-home {
 		}
 		&__time{
 			.icon{
-				font-size: 1.75em;
+				font-size: 1.5em;
 			}
 		}
 		.active{
