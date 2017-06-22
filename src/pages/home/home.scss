@@ -150,6 +150,28 @@ page-home {
 	    }
 	}
 	.week-list{
+		.week-container{
+			min-height: inherit;
+    		font-size: inherit;
+    		color: inherit;
+    		width: calc(100% + 40px);
+    		margin-left: -20px;
+    		padding: 0px 20px;
+    		.item-inner{
+    			padding: 0;
+    			border: 0;
+    			.label{
+    				margin: 0;
+    				padding: 0;
+    			}
+    		}
+    		p{
+    			font-size: 1.1em;
+    		}
+    		h6{
+    			font-size: 1.5em
+    		}
+		}
 		&__row{
 			justify-content: space-between;
 			margin: 0 -20px;
@@ -183,6 +205,7 @@ page-home {
 .view-more{
 	.button{
 		height: inherit;
+		width: 100%;
 	}
 	.button-inner{
 		flex-direction: column;
@@ -191,9 +214,6 @@ page-home {
 		font-size: 1.6em;
 	}			
 }
-
-
-
 
 
 

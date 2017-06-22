@@ -52428,6 +52428,33 @@ ion-app.app-root [p-h-50] {
   font-size: 1.6em;
 }
 
+.full-card .week-list .week-container {
+  min-height: inherit;
+  font-size: inherit;
+  color: inherit;
+  width: calc(100% + 40px);
+  margin-left: -20px;
+  padding: 0px 20px;
+}
+
+.full-card .week-list .week-container .item-inner {
+  padding: 0;
+  border: 0;
+}
+
+.full-card .week-list .week-container .item-inner .label {
+  margin: 0;
+  padding: 0;
+}
+
+.full-card .week-list .week-container p {
+  font-size: 1.1em;
+}
+
+.full-card .week-list .week-container h6 {
+  font-size: 1.5em;
+}
+
 .full-card .week-list__row {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -52455,6 +52482,7 @@ ion-app.app-root [p-h-50] {
 
 .view-more .button {
   height: inherit;
+  width: 100%;
 }
 
 .view-more .button-inner {

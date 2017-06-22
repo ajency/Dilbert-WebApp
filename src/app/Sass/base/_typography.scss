@@ -15,9 +15,13 @@ $font-weight: font-weight !default;
   }
 }
 
+// Default weight for heading
+
 h1, h2, h3, h4, h5, h6{
 	font-weight: 400;
 }
+
+// Font sizes
 
 .x-small{
 	font-size: 0.9em;
