@@ -52474,6 +52474,11 @@ ion-app.app-root [p-h-50] {
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.13);
 }
 
+.day-detail {
+  border-bottom: 2px solid #f6f5f8;
+  padding-bottom: 29px;
+}
+
 .day-detail .detail-cols {
   -webkit-flex: 1;
   -ms-flex: 1;
