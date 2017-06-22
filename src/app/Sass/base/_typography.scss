@@ -15,7 +15,27 @@ $font-weight: font-weight !default;
   }
 }
 
+h1, h2, h3, h4, h5, h6{
+	font-weight: 400;
+}
+
+.x-small{
+	font-size: 0.9em;
+}
+
+.xx-small{
+	font-size: 0.75em;
+}
+
+.xxx-small{
+	font-size: 0.6em;
+}
+
 
 p{
-	font-size: 1.15em;
+	font-size: 1.1em;
+}
+
+span{
+	font-size: 0.95em;
 }

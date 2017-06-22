@@ -15,12 +15,17 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, blockquot
   margin: 0;
   padding: 0;
   border: 0;
-  vertical-align: baseline; 
+  vertical-align: baseline;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 
 ol, ul {
   list-style: none;
+}
+
+i{
+  font-style: normal;
 }
 
 /* HTML5 display-role reset for older browsers */
