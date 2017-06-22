@@ -52452,7 +52452,8 @@ ion-app.app-root [p-h-50] {
 }
 
 .full-card .week-list .week-container h6 {
-  font-size: 1.5em;
+  font-size: 1.4em;
+  font-weight: 300;
 }
 
 .full-card .week-list__row {
@@ -52464,7 +52465,7 @@ ion-app.app-root [p-h-50] {
 }
 
 .full-card .week-list__time .icon {
-  font-size: 1.5em;
+  font-size: 1.1em;
 }
 
 .full-card .week-list .active {
