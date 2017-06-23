@@ -49477,6 +49477,94 @@ span {
   }
 }
 
+.item-select {
+  width: 150px;
+}
+
+.item-select .select,
+.item-select .label {
+  width: 100%;
+  max-width: 100%;
+  font-size: 0.9em;
+}
+
+.text-input {
+  font-size: 0.85em;
+}
+
+.avatar-group {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.avatar-group__list {
+  position: relative;
+  margin-right: -5px;
+}
+
+.avatar-group__list .avatar-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 3px #fff;
+}
+
+.avatar-group__list:nth-child(1) {
+  z-index: 4;
+}
+
+.avatar-group__list:nth-child(2) {
+  z-index: 3;
+}
+
+.avatar-group__list:nth-child(3) {
+  z-index: 2;
+}
+
+.avatar-group__list:nth-child(4) {
+  z-index: 1;
+}
+
+.avatar-group .plus-more {
+  font-size: 1.1em;
+}
+
+.text-primary {
+  color: #6943bf;
+}
+
+.text-secondary {
+  color: #facf21;
+}
+
+[m-0] {
+  margin: 0;
+}
+
+[p-0] {
+  padding: 0;
+}
+
+.click {
+  cursor: pointer;
+}
+
+.dis-block {
+  display: block;
+}
+
+.dis-inline {
+  display: inline-block;
+}
+
+.visible {
+  visibility: hidden;
+}
+
 /*want loop to extend change this value*/
 ion-app.app-root [m-t-0] {
   margin-top: 0px;
@@ -52178,93 +52266,6 @@ ion-app.app-root [m-h-50] {
 ion-app.app-root [p-h-50] {
   padding-left: 50px;
   padding-right: 50px;
-}
-
-.item-select {
-  width: 150px;
-}
-
-.item-select .select, .item-select .label {
-  width: 100%;
-  max-width: 100%;
-  font-size: 0.9em;
-}
-
-.text-input {
-  font-size: 0.85em;
-}
-
-.avatar-group {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.avatar-group__list {
-  position: relative;
-  margin-right: -5px;
-}
-
-.avatar-group__list .avatar-img {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  box-shadow: 0px 0px 0px 3px #fff;
-}
-
-.avatar-group__list:nth-child(1) {
-  z-index: 4;
-}
-
-.avatar-group__list:nth-child(2) {
-  z-index: 3;
-}
-
-.avatar-group__list:nth-child(3) {
-  z-index: 2;
-}
-
-.avatar-group__list:nth-child(4) {
-  z-index: 1;
-}
-
-.avatar-group .plus-more {
-  font-size: 1.1em;
-}
-
-.text-primary {
-  color: #6943bf;
-}
-
-.text-secondary {
-  color: #facf21;
-}
-
-[m-0] {
-  margin: 0;
-}
-
-[p-0] {
-  padding: 0;
-}
-
-.click {
-  cursor: pointer;
-}
-
-.dis-block {
-  display: block;
-}
-
-.dis-inline {
-  display: inline-block;
-}
-
-.visible {
-  visibility: hidden;
 }
 
 summary-content .day-detail {
