@@ -1,8 +1,10 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/v2/theming/
+
 $font-path: "../assets/fonts";
 
 @import "ionic.globals";
+
 
 
 // Shared Variables
@@ -21,16 +23,13 @@ $toolbar-background: #fff !default;
 
 // Heading Font-size 
 $h1-font-size: 3em;
-
 $h2-font-size: 2.8em;
-
 $h3-font-size: 2.6em;
-
 $h4-font-size: 2.1em;
-
 $h5-font-size: 1.8em;
-
 $h6-font-size: 1.5em;
+
+
 
 // Named Color Variables
 // --------------------------------------------------
@@ -40,26 +39,13 @@ $h6-font-size: 1.5em;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
-$colors: (
-  primary:    	#6943bf,
-  secondary:  	#facf21,
-  danger:     	#fa5777,
-  light:      	#f4f4f4,
-  dark:       	#222,
-  success:    	#03b8b2,
-  info:       	#32394b,
-  mute:       	#f0f1f6,
-  text:       	#868686,
-  text-lighter: #aeb3b9,
-  cloud:        #fff,
-  transparent: 	transparent
-);
+$colors: ( primary: #6943bf, secondary: #facf21, danger: #fa5777, light: #f4f4f4, dark: #222, success: #03b8b2, info: #32394b, mute: #f0f1f6, text: #868686, text-lighter: #aeb3b9, cloud: #fff, transparent: transparent);
+
 
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
 
 
 
@@ -69,12 +55,9 @@ $colors: (
 
 
 
-
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
-
-
 
 
 // App Theme
@@ -83,7 +66,6 @@ $colors: (
 // then be future customized. This import comes last
 // so that the above variables are used and Ionic's
 // default are overridden.
-
 @import "ionic.theme.default";
 
 
@@ -91,12 +73,10 @@ $colors: (
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
 // http://ionicframework.com/docs/v2/ionicons/
-
 @import "ionic.ionicons";
 
 
 // Fonts
 // --------------------------------------------------
-
 @import "roboto";
 @import "noto-sans";
