@@ -1,111 +1,101 @@
 summary-sidebar {
-
+    // ---------------------------
+    // CURRENT TOP LEVEL CARD -----------
+    // ---------------------------
+    .current-card {
+        &__header {
+            justify-content: space-between;
+            margin: 0 -20px;
+            padding: 10px 20px 20px 20px;
+            border-bottom: 3px solid #eee;
+            position: relative;
+        }
+        .week-loader {
+            position: absolute;
+            bottom: -3px;
+            height: 3px;
+            background-color: color($colors, primary);
+            left: 0;
+            transition: all 0.8s ease;
+        }
+        &__body {
+            justify-content: center;
+            sub {
+                font-size: 0.55em;
+            }
+        }
+        &__footer {
+            justify-content: center;
+            text-align: center;
+            margin: 0 -20px;
+            border-top: 2px solid #f6f5f8;
+        }
+        .timing {
+            flex: 1;
+            text-align: center;
+            font-size: 1.1em;
+            .icon {
+                vertical-align: middle;
+            }
+            &.in {
+                border-right: 2px solid #f6f5f8;
+            }
+        }
+    }
+    // ---------------------------
+    // FULL WEEK CARD -----------
+    // ---------------------------
+    .full-card {
+        &__header {
+            justify-content: space-between;
+            margin: 0 -20px;
+            padding: 5px 20px;
+            background-color: #f8f8fa;
+            border-top: 2px solid #f6f5f8;
+            border-bottom: 2px solid #f6f5f8;
+            .icon {
+                font-size: 1.6em;
+            }
+        }
+        .week-list {
+            .week-container {
+                min-height: inherit;
+                font-size: inherit;
+                color: inherit;
+                width: calc(100% + 40px);
+                margin-left: -20px;
+                padding: 0px 20px;
+                .item-inner {
+                    padding: 0;
+                    border: 0;
+                    .label {
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+                p {
+                    font-size: 1.1em;
+                }
+                h6 {
+                    font-size: 1.4em;
+                    font-weight: 300;
+                }
+            }
+            &__row {
+                justify-content: space-between;
+                margin: 0 -20px;
+                padding: 10px 20px;
+            }
+            &__time {
+                .icon {
+                    font-size: 1.1em;
+                }
+            }
+            .active {
+                background-color: lighten(color($colors, primary), 45%);
+                border-left: 3px solid color($colors, primary);
+                box-shadow: $shadow-3;
+            }
+        }
+    }
 }
-
-
-// ---------------------------
-// CURRENT TOP LEVEL CARD -----------
-// ---------------------------
-
-
-.current-card{
-	&__header{
-		justify-content: space-between;
-		margin: 0 -20px;
-		padding: 10px 20px 20px 20px;
-    	border-bottom: 3px solid #eee;
-    	position: relative;
-	}
-	.week-loader{
-		position: absolute;
-		bottom: -3px;
-	    height: 3px;
-	    background-color: color($colors,primary);
-	    left: 0;
-	    transition: all 0.8s ease;
-	}
-	&__body{
-    	justify-content: center;
-    	sub{
-    		font-size: 0.55em;
-    	}
-	}
-	&__footer{
-    	justify-content: center;
-    	text-align: center;
-    	margin: 0 -20px;
-    	border-top: 2px solid #f6f5f8;
-	}
-	.timing{
-		flex: 1;
-		text-align: center;
-		font-size: 1.1em;
-		.icon{
-			vertical-align: middle;
-		}
-		&.in{
-			border-right: 2px solid #f6f5f8;
-		}
-	}
-}
-
-
-// ---------------------------
-// FULL WEEK CARD -----------
-// ---------------------------
-
-
-.full-card{
-	&__header{
-		justify-content: space-between;
-	    margin: 0 -20px;
-	    padding: 5px 20px;
-	    background-color: #f8f8fa;
-	    border-top: 2px solid #f6f5f8;
-	    border-bottom: 2px solid #f6f5f8;
-	    .icon{
-	    	font-size: 1.6em;
-	    }
-	}
-	.week-list{
-		.week-container{
-			min-height: inherit;
-    		font-size: inherit;
-    		color: inherit;
-    		width: calc(100% + 40px);
-    		margin-left: -20px;
-    		padding: 0px 20px;
-    		.item-inner{
-    			padding: 0;
-    			border: 0;
-    			.label{
-    				margin: 0;
-    				padding: 0;
-    			}
-    		}
-    		p{
-    			font-size: 1.1em;
-    		}
-    		h6{
-    			font-size: 1.4em;
-    			font-weight: 300;
-    		}
-		}
-		&__row{
-			justify-content: space-between;
-			margin: 0 -20px;
-    		padding: 10px 20px;
-		}
-		&__time{
-			.icon{
-				font-size: 1.1em;
-			}
-		}
-		.active{
-			background-color: lighten(color($colors,primary),45%);
-			border-left: 3px solid color($colors,primary);
-			box-shadow: $shadow-3;
-		}
-	}
-}
-

@@ -1,4 +1,3 @@
-
 // ---------------------------
 // HELPERS STYLES -----------
 // ---------------------------
@@ -11,45 +10,90 @@
 @import "misc";
 
 
-.text-primary{
-	color: $accent-primary;
+.text-primary {
+    color: $accent-primary;
 }
 
-.text-secondary{
-	color: $accent-secondary;
+.text-secondary {
+    color: $accent-secondary;
 }
 
-
-
-// Margin and padding 0 - Ionic style
-
-[m-0]{
-	margin: 0;
-}
-
-[p-0]{
-	padding: 0;
-}
 
 // Click cursor
 
-.click{
-	cursor: pointer;
+.click {
+    cursor: pointer;
 }
 
 // Display's
 
-.dis-block{
-	display: block;
+.dis-block {
+    display: block;
 }
 
-.dis-inline{
-	display: inline-block;
+.dis-inline {
+    display: inline-block;
 }
-
 
 // Visibility class
 
-.visible{
-	visibility: hidden;
+.visible {
+    visibility: hidden;
+}
+
+
+// ---------------------------
+// MARGIN & PADDING LOOP -----------
+// ---------------------------
+
+$i: 0;
+@while $i <=50 {
+    /*want loop to extend change this value*/
+    // Margin-all
+    ion-app.app-root [m-t-#{$i}] {
+        margin-top: 1px * $i;
+    }
+    ion-app.app-root [m-b-#{$i}] {
+        margin-bottom: 1px * $i;
+    }
+    ion-app.app-root [m-l-#{$i}] {
+        margin-left: 1px * $i;
+    }
+    ion-app.app-root [m-r-#{$i}] {
+        margin-right: 1px * $i;
+    }
+    // Padding-all
+    ion-app.app-root [p-t-#{$i}] {
+        padding-top: 1px * $i;
+    }
+    ion-app.app-root [p-b-#{$i}] {
+        padding-bottom: 1px * $i;
+    }
+    ion-app.app-root [p-l-#{$i}] {
+        padding-left: 1px * $i;
+    }
+    ion-app.app-root [p-r-#{$i}] {
+        padding-right: 1px * $i;
+    }
+    // Margin-vertical
+    ion-app.app-root [m-v-#{$i}] {
+        margin-top: 1px * $i;
+        margin-bottom: 1px * $i;
+    }
+    // Padding vertical
+    ion-app.app-root [p-v-#{$i}] {
+        padding-top: 1px * $i;
+        padding-bottom: 1px * $i;
+    }
+    // Margin horizontal
+    ion-app.app-root [m-h-#{$i}] {
+        margin-left: 1px * $i;
+        margin-right: 1px * $i;
+    }
+    // Padding horizontal
+    ion-app.app-root [p-h-#{$i}] {
+        padding-left: 1px * $i;
+        padding-right: 1px * $i;
+    }
+    $i: $i + 1;
 }
