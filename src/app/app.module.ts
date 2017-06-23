@@ -10,13 +10,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { PopoverContentPage } from '../pages/popover/popover';
+import { SummarySidebarComponent } from '../components/summary-sidebar/summary-sidebar';
+import { SummaryContentComponent } from '../components/summary-content/summary-content';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    PopoverContentPage
+    PopoverContentPage,
+    SummarySidebarComponent,
+    SummaryContentComponent
   ],
   imports: [
     BrowserModule,

@@ -52267,66 +52267,16 @@ ion-app.app-root [p-h-50] {
   visibility: hidden;
 }
 
-.section-title {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: 1.1em;
+.day-detail {
+  border-bottom: 2px solid #f6f5f8;
+  padding-bottom: 29px;
 }
 
-.dashboard__summary {
-  box-shadow: 0px 0px 30px -4px rgba(0, 0, 0, 0.12);
-}
-
-.main-title {
-  font-size: 1.25em;
-}
-
-.summary {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.summary__sidebar {
+.day-detail .detail-cols {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  box-shadow: 5px 0 20px -1px rgba(6, 6, 6, 0.06);
-}
-
-.summary__content {
-  -webkit-flex: 1.7;
-  -ms-flex: 1.7;
-  flex: 1.7;
-}
-
-@media screen and (min-width: 1400px) {
-  .summary__content {
-    -webkit-flex: 2;
-    -ms-flex: 2;
-    flex: 2;
-  }
-}
-
-@media screen and (min-width: 1601px) {
-  .summary__content {
-    -webkit-flex: 2.3;
-    -ms-flex: 2.3;
-    flex: 2.3;
-  }
-}
-
-.flex-row {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+  text-align: center;
 }
 
 .current-card__header {
@@ -52381,36 +52331,6 @@ ion-app.app-root [p-h-50] {
 
 .current-card .timing.in {
   border-right: 2px solid #f6f5f8;
-}
-
-.custom-icon {
-  display: inline-block;
-  height: 28px;
-  width: 24px;
-  background-image: url("../assets/img/sprite.png");
-  background-repeat: no-repeat;
-  background-size: 240%;
-  vertical-align: middle;
-}
-
-.custom-icon.indoor {
-  background-position: -27px -96px;
-}
-
-.custom-icon.outdoor {
-  background-position: -32px -125px;
-}
-
-.custom-icon.summary {
-  width: 28px;
-  background-position: -24px -55px;
-  background-size: 180%;
-}
-
-.custom-icon.flower {
-  background-position: 0px 0;
-  width: 26px;
-  background-size: 200%;
 }
 
 .full-card__header {
@@ -52474,16 +52394,96 @@ ion-app.app-root [p-h-50] {
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.13);
 }
 
-.day-detail {
-  border-bottom: 2px solid #f6f5f8;
-  padding-bottom: 29px;
+.section-title {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 1.1em;
 }
 
-.day-detail .detail-cols {
+.dashboard__summary {
+  box-shadow: 0px 0px 30px -4px rgba(0, 0, 0, 0.12);
+}
+
+.main-title {
+  font-size: 1.25em;
+}
+
+.summary {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.summary__sidebar {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  text-align: center;
+  box-shadow: 5px 0 20px -1px rgba(6, 6, 6, 0.06);
+}
+
+.summary__content {
+  -webkit-flex: 1.7;
+  -ms-flex: 1.7;
+  flex: 1.7;
+}
+
+@media screen and (min-width: 1400px) {
+  .summary__content {
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+  }
+}
+
+@media screen and (min-width: 1601px) {
+  .summary__content {
+    -webkit-flex: 2.3;
+    -ms-flex: 2.3;
+    flex: 2.3;
+  }
+}
+
+.flex-row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.custom-icon {
+  display: inline-block;
+  height: 28px;
+  width: 24px;
+  background-image: url("../assets/img/sprite.png");
+  background-repeat: no-repeat;
+  background-size: 240%;
+  vertical-align: middle;
+}
+
+.custom-icon.indoor {
+  background-position: -27px -96px;
+}
+
+.custom-icon.outdoor {
+  background-position: -32px -125px;
+}
+
+.custom-icon.summary {
+  width: 28px;
+  background-position: -24px -55px;
+  background-size: 180%;
+}
+
+.custom-icon.flower {
+  background-position: 0px 0;
+  width: 26px;
+  background-size: 200%;
 }
 
 .view-more .button {
