@@ -1,11 +1,7 @@
-
 // ---------------------------
 // CUSTOM CSS FOR THIS PAGE -----------
 // ---------------------------
-
-page-home {
-
-}
+page-home {}
 
 
 
@@ -16,114 +12,91 @@ page-home {
 
 // Heading title
 
-.section-title{
-	display: flex;
-	align-items: center;
-	font-size: 1.1em;
+.section-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
 }
-
 
 // Dashboard columns
 
-.dashboard{
-	&__summary{
-		box-shadow: $shadow-1;
-	}
+.dashboard {
+    &__summary {
+        box-shadow: $shadow-1;
+    }
 }
-
 
 // main title heading
 
-.main-title{
-	font-size: 1.25em;
+.main-title {
+    font-size: 1.25em;
 }
-
 
 // Summary section
 
-.summary{
-	display: flex;
-	&__sidebar{
-		flex: 1;
-		box-shadow: $shadow-2;
-	}
-	&__content{
-		flex: 1.7;
-		@media screen and (min-width: 1400px) {
-			flex: 2;
-		}
-		@media screen and (min-width: 1601px) {
-			flex: 2.3;
-		}
-	}
+.summary {
+    display: flex;
+    &__sidebar {
+        flex: 1;
+        box-shadow: $shadow-2;
+    }
+    &__content {
+        flex: 1.7;
+        @media screen and (min-width: 1400px) {
+            flex: 2;
+        }
+        @media screen and (min-width: 1601px) {
+            flex: 2.3;
+        }
+    }
 }
-
 
 // Common flexbox call
 
-.flex-row{
-	display: flex;
-	align-items: center;
+.flex-row {
+    display: flex;
+    align-items: center;
 }
-
-
 
 // Custom icon
 
-.custom-icon{
-	display: inline-block;
-	height: 28px;
-	width: 24px;
-	background-image: url('../assets/img/sprite.png');
-	background-repeat: no-repeat;
-	background-size: 240%;
-	vertical-align: middle;
-	&.indoor{
-		background-position: -27px -96px;
-	}
-	&.outdoor{
-		background-position: -32px -125px;
-	}
-	&.summary{
-		width: 28px;
-    	background-position: -24px -55px;
-    	background-size: 180%;
-	}
-	&.flower{
-		background-position: 0px 0;
-    	width: 26px;
-    	background-size: 200%;
-	}
+.custom-icon {
+    display: inline-block;
+    height: 28px;
+    width: 24px;
+    background-image: url('../assets/img/sprite.png');
+    background-repeat: no-repeat;
+    background-size: 240%;
+    vertical-align: middle;
+    &.indoor {
+        background-position: -27px -96px;
+    }
+    &.outdoor {
+        background-position: -32px -125px;
+    }
+    &.summary {
+        width: 28px;
+        background-position: -24px -55px;
+        background-size: 180%;
+    }
+    &.flower {
+        background-position: 0px 0;
+        width: 26px;
+        background-size: 200%;
+    }
 }
-
-
 
 // View More
 
-.view-more{
-	.button{
-		height: inherit;
-		width: 100%;
-	}
-	.button-inner{
-		flex-direction: column;
-	}
-	.icon{
-		font-size: 1.6em;
-	}			
+.view-more {
+    .button {
+        height: inherit;
+        width: 100%;
+    }
+    .button-inner {
+        flex-direction: column;
+    }
+    .icon {
+        font-size: 1.6em;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
