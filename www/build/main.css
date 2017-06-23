@@ -52334,6 +52334,31 @@ summary-sidebar .current-card .timing.in {
   border-right: 2px solid #f6f5f8;
 }
 
+summary-sidebar .list-overflow {
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0 -20px;
+  padding: 0 20px;
+  /* Let's get this party started */
+  /* Track */
+  /* Handle */
+}
+
+summary-sidebar .list-overflow::-webkit-scrollbar {
+  width: 3px;
+}
+
+summary-sidebar .list-overflow::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px #fff;
+  border-radius: 10px;
+}
+
+summary-sidebar .list-overflow::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #aeb3b9;
+}
+
 summary-sidebar .full-card__header {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
