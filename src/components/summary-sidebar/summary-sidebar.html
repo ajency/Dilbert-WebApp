@@ -34,7 +34,7 @@
         </div>
         <div class="full-card__body">
             <!-- Week list -->
-            <ul class="week-list">
+            <ul class="week-list list-control overflow-active">
                 <button ion-item class="week-container" m-v-15>
                     <li class="week-list__row flex-row">
                         <div class="week-list__day">
@@ -120,13 +120,47 @@
                         </div>
                     </li>
                 </button>
+                <button ion-item class="week-container" m-v-15>
+                    <li class="week-list__row flex-row">
+                        <div class="week-list__day">
+                            <p no-margin m-b-8 font-weight-5>Tue</p>
+                            <span ion-text color="text" font-weight-3>May 09</span>
+                        </div>
+                        <div class="week-list__session">
+                            <span class="dis-block" m-b-11>09:40 am</span>
+                            <span ion-text color="primary">6:45 pm</span>
+                        </div>
+                        <div class="week-list__time flex-row">
+                            <ion-icon name="checkmark-circle" color="text"></ion-icon>
+                            <h6 p-h-12 ion-text color="text" font-weight-3>9:05<span class="xx-small" p-l-2 font-weight-4>hr</span></h6>
+                            <ion-icon name="arrow-forward"></ion-icon>
+                        </div>
+                    </li>
+                </button>
+                <button ion-item class="week-container" m-v-15>
+                    <li class="week-list__row flex-row">
+                        <div class="week-list__day">
+                            <p no-margin m-b-8 font-weight-5>Mon</p>
+                            <span ion-text color="text" font-weight-3>May 08</span>
+                        </div>
+                        <div class="week-list__session">
+                            <span class="dis-block" m-b-11>09:24 am</span>
+                            <span ion-text>6:40 pm</span>
+                        </div>
+                        <div class="week-list__time flex-row">
+                            <ion-icon name="checkmark-circle" color="success" class="hvr-bounce-in"></ion-icon>
+                            <h6 p-h-12 ion-text color="text" font-weight-3>9:16<span class="xx-small" p-l-2 font-weight-4>hr</span></h6>
+                            <ion-icon name="arrow-forward"></ion-icon>
+                        </div>
+                    </li>
+                </button>
                 <!-- View More -->
-                <li class="view-more" text-center>
+                <!-- <li class="view-more" text-center>
                     <button ion-button clear color="text" p-t-10>
                         <span class="dis-block" text-capitalize font-weight-4>View More</span>
                         <ion-icon name="arrow-down" m-t-8></ion-icon>
                     </button>
-                </li>
+                </li> -->
                 <!-- View More ends -->
             </ul>
             <!-- Week list ends -->

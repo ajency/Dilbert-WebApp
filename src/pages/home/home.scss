@@ -51,6 +51,12 @@ page-home {}
     }
 }
 
+@media screen and (max-width: 600px){
+    .summary{
+        flex-direction: column;
+    }
+}
+
 // Common flexbox call
 
 .flex-row {
