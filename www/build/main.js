@@ -1,6 +1,34 @@
 /******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	var parentJsonpFunction = window["webpackJsonp"];
+/******/ 	window["webpackJsonp"] = function webpackJsonpCallback(chunkIds, moreModules, executeModules) {
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, resolves = [], result;
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(installedChunks[chunkId])
+/******/ 				resolves.push(installedChunks[chunkId][0]);
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules, executeModules);
+/******/ 		while(resolves.length)
+/******/ 			resolves.shift()();
+/******/
+/******/ 	};
+/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
+/******/
+/******/ 	// objects to store loaded and loading chunks
+/******/ 	var installedChunks = {
+/******/ 		0: 0
+/******/ 	};
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -26,6 +54,49 @@
 /******/ 		return module.exports;
 /******/ 	}
 /******/
+/******/ 	// This file contains only the entry chunk.
+/******/ 	// The chunk loading function for additional chunks
+/******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
+/******/ 		if(installedChunks[chunkId] === 0)
+/******/ 			return Promise.resolve();
+/******/
+/******/ 		// an Promise means "currently loading".
+/******/ 		if(installedChunks[chunkId]) {
+/******/ 			return installedChunks[chunkId][2];
+/******/ 		}
+/******/ 		// start chunk loading
+/******/ 		var head = document.getElementsByTagName('head')[0];
+/******/ 		var script = document.createElement('script');
+/******/ 		script.type = 'text/javascript';
+/******/ 		script.charset = 'utf-8';
+/******/ 		script.async = true;
+/******/ 		script.timeout = 120000;
+/******/
+/******/ 		if (__webpack_require__.nc) {
+/******/ 			script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 		}
+/******/ 		script.src = __webpack_require__.p + "" + chunkId + ".main.js";
+/******/ 		var timeout = setTimeout(onScriptComplete, 120000);
+/******/ 		script.onerror = script.onload = onScriptComplete;
+/******/ 		function onScriptComplete() {
+/******/ 			// avoid mem leaks in IE.
+/******/ 			script.onerror = script.onload = null;
+/******/ 			clearTimeout(timeout);
+/******/ 			var chunk = installedChunks[chunkId];
+/******/ 			if(chunk !== 0) {
+/******/ 				if(chunk) chunk[1](new Error('Loading chunk ' + chunkId + ' failed.'));
+/******/ 				installedChunks[chunkId] = undefined;
+/******/ 			}
+/******/ 		};
+/******/
+/******/ 		var promise = new Promise(function(resolve, reject) {
+/******/ 			installedChunks[chunkId] = [resolve, reject];
+/******/ 		});
+/******/ 		installedChunks[chunkId][2] = promise;
+/******/
+/******/ 		head.appendChild(script);
+/******/ 		return promise;
+/******/ 	};
 /******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
@@ -61,6 +132,9 @@
 /******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "build/";
+/******/
+/******/ 	// on error function for async loading
+/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 263);
@@ -35389,7 +35463,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Version */]
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__components_modal_modal_controller__ = __webpack_require__(136);
 /* unused harmony reexport ModalController */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_nav_nav__ = __webpack_require__(68);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_54__components_nav_nav__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_54__components_nav_nav__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_nav_nav_pop__ = __webpack_require__(66);
 /* unused harmony reexport NavPop */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_nav_nav_pop_anchor__ = __webpack_require__(138);
@@ -35419,7 +35493,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Version */]
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__components_popover_popover_component__ = __webpack_require__(73);
 /* unused harmony reexport PopoverCmp */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__components_popover_popover_controller__ = __webpack_require__(142);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_69__components_popover_popover_controller__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_69__components_popover_popover_controller__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__components_radio_radio_button__ = __webpack_require__(143);
 /* unused harmony reexport RadioButton */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__components_radio_radio_group__ = __webpack_require__(75);
@@ -35506,20 +35580,20 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Version */]
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_110__platform_dom_controller__ = __webpack_require__(8);
 /* unused harmony reexport DomController */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_111__platform_platform__ = __webpack_require__(3);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_111__platform_platform__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_111__platform_platform__["a"]; });
 /* unused harmony reexport setupPlatform */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_112__tap_click_haptic__ = __webpack_require__(36);
 /* unused harmony reexport Haptic */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_113__navigation_deep_linker__ = __webpack_require__(14);
 /* unused harmony reexport DeepLinker */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_114__navigation_ionic_page__ = __webpack_require__(229);
-/* unused harmony reexport IonicPage */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_114__navigation_ionic_page__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_115__navigation_nav_controller__ = __webpack_require__(19);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_115__navigation_nav_controller__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_115__navigation_nav_controller__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_116__navigation_nav_controller_base__ = __webpack_require__(45);
 /* unused harmony reexport NavControllerBase */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_117__navigation_nav_params__ = __webpack_require__(15);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_117__navigation_nav_params__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_117__navigation_nav_params__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_118__navigation_nav_util__ = __webpack_require__(21);
 /* unused harmony reexport DeepLinkMetadata */
 /* unused harmony reexport DeepLinkMetadataFactory */
@@ -35531,7 +35605,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Version */]
 /* unused harmony reexport UrlSerializer */
 /* unused harmony reexport DeepLinkConfigToken */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_121__navigation_view_controller__ = __webpack_require__(5);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_121__navigation_view_controller__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_121__navigation_view_controller__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_122__gestures_pan_gesture__ = __webpack_require__(44);
 /* unused harmony reexport PanGesture */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_123__gestures_gesture__ = __webpack_require__(225);
@@ -35579,7 +35653,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Version */]
 /* unused harmony reexport IonicGestureConfig */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_138__module__ = __webpack_require__(228);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_138__module__["a"]; });
-/* unused harmony reexport IonicPageModule */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_138__module__["b"]; });
 /* unused harmony reexport provideLocationStrategy */
 
 
@@ -55724,6 +55798,7 @@ webpackEmptyContext.id = 98;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__popover_popover__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__style_guide_style_guide__ = __webpack_require__(265);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -55734,6 +55809,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -55749,15 +55825,19 @@ var HomePage = (function () {
             ev: myEvent
         });
     };
+    HomePage.prototype.openStyle = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__style_guide_style_guide__["a" /* StyleGuidePage */]);
+    };
     return HomePage;
 }());
 HomePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Applications/XAMPP/xamppfiles/htdocs/Dilbert-WebApp/Dilbert-WebApp/src/pages/home/home.html"*/'\n<!-- Site header goes here -->\n\n<ion-header class="main-header shadow-1">\n   <div class="container">\n      <!-- Navbar Start-->\n      <ion-navbar class="dilbert-nav">\n         <button ion-button menuToggle m-h-0 class="ham">\n            <ion-icon name="menu"></ion-icon>\n         </button>\n         <div class="dilber-nav__left nav-cols">\n           <!--  <button ion-button icon-only clear p-h-10>\n               <i class="custom-icon flower"></i>\n            </button>   \n            <button ion-button icon-only clear p-h-10>\n               <i class="custom-icon summary"></i>\n            </button> -->\n            <ion-title start font-weight-4 class="brand-name"><p ion-text color="secondary" no-margin>Ajency.in</p></ion-title>\n         </div>\n         <div class="dilbert-nav__right nav-cols">\n            <!-- Notification -->\n            <!-- <button ion-button icon-only clear m-r-10 class="notify hvr-pulse-grow">\n               <ion-icon name="notifications-outline" color="dark"></ion-icon>\n            </button> -->\n            <!-- User profile -->\n            <!-- <button ion-button clear icon-only p-v-20 (click)="openPopover($event)" class="user-profile">\n              <ion-item p-l-0>\n                <ion-avatar item-start m-h-0>\n                  <img src="https://ionicframework.com/dist/preview-app/www/assets/img/avatar-ts-woody.png" />\n                </ion-avatar>\n                <ion-icon name="arrow-dropdown" p-r-0 p-l-5></ion-icon>\n              </ion-item>\n            </button> -->\n            <!-- User profile ends -->\n         </div>\n      </ion-navbar>\n      <!-- Navbar ends -->\n   </div>\n</ion-header>\n\n<!-- Site header ends -->\n\n\n<!-- Body starts -->\n\n<ion-content padding>\n   <div class="container" p-h-20>\n\n      <ion-grid class="grid dashboard" m-t-15>\n         <ion-row class="row dashboard__row">\n            <ion-col class="col" col-12 m-b-20>\n               <!-- Heading -->\n               <div class="section-title">\n                  <i class="custom-icon summary" m-r-10></i><h5 class="page-title">My Summary</h5>\n               </div>\n            </ion-col>               \n            <ion-col class="col dashboard__summary" col-12 col-md-12 col-lg-8 p-h-0 p-v-0>\n               <!-- Summary section -->\n               <div class="summary">\n                  <!-- Summary sidebar section (From component-sidebar)-->\n                  <summary-sidebar class="summary__sidebar" p-h-20 p-v-10></summary-sidebar>\n                  <!-- Summary sidebar ends -->\n                  <!-- Summary content -->\n                  <summary-content class="summary__content" p-h-20 p-v-10></summary-content>\n                  <!-- Summary content ends -->\n               </div>\n            </ion-col>\n            <ion-col class="col dashboard__leaves" col-12 col-md-12 col-lg-4 p-h-0 p-v-0>\n               <!-- <ion-content class="overflow-scroll" scroll="true">\n                  <div class="section-title">\n                  <i class="custom-icon summary" m-r-10></i><h6 class="main-title">My Summary</h6>\n               </div>\n               </ion-content> -->\n            </ion-col>\n         </ion-row>\n      </ion-grid>\n\n    <div class="style-guide" m-t-20 p-h-50>\n      <h2 font-weight-3 ion-text color="primary" text-center>Style Guide -- Version - 1.0</h2>\n      <hr>\n      <div m-v-30>\n        <h2 ion-text color="text">Headings</h2>\n        <hr>\n        <h1>Heading H1</h1>\n        <h2>Heading H2</h2>\n        <h3>Heading H3</h3>\n        <h4>Heading H4</h4>\n        <h5>Heading H5</h5>\n        <h6>Heading H6</h6>\n      </div>\n      <hr>\n      <div class="color-code" m-v-30>\n        <h2 ion-text color="text">Colors</h2>\n        <hr>\n        <div class="code-container">\n        <div class="primary">\n          <p class="color"></p>\n          <p>Primary</p>\n        </div>\n        <div class="secondary">\n          <p class="color"></p>\n          <p>Secondary</p>\n        </div>\n        <div class="text">\n          <p class="color"></p>\n          <p>Text</p>\n        </div>\n        <div class="success">\n          <p class="color"></p>\n          <p>Success</p>\n        </div>\n        <div class="danger">\n          <p class="color"></p>\n          <p>Danger</p>\n        </div>\n        </div>\n\n      </div>\n      <hr>\n      <div m-v-30>\n        <h2 ion-text color="text">Typography</h2>\n        <hr>\n        <h5>Page Title</h5>\n        <p>Element Title</p>\n        <span ion-title color="text">Labels</span>\n        <span class="dis-block xx-small" m-t-15>xx Smaller label</span><br>\n        <span class="dis-block xxx-small">xxx smaller label</span>\n      </div>\n      <hr>\n      <div m-v-30>\n        <h2 ion-text color="text">Font Weights</h2>\n        <hr>\n        <p font-weight-6>Font-weight-6(Bolder)</p>\n        <p font-weight-5>Font-weight-5(Bold)</p>\n        <p font-weight-4>Font-weight-4(Medium)</p>\n        <p font-weight-3>Font-weight-3(Regular)</p>\n        <p font-weight-1>Font-weight-1(Lighter)</p>\n      </div>\n      <div m-v-30>\n        <h2 ion-text color="text">Icons</h2>\n        <hr>\n        <ion-icon name="calendar" class="icon-size full" m-v-10></ion-icon> - Full<br>\n        <ion-icon name="calendar" class="icon-size mini"></ion-icon> - Mini\n      </div>\n      <hr>\n      <div m-v-30>\n        <h2 ion-text color="text">Utility Classes</h2>\n        <hr>\n        <p m-t-15 m-b-15>m-t/b/-(number) - denotes margin-top/bottom(eg: m-t-5,m-b-10)</p>\n        <p m-t-15 m-b-15>m-h-number - denotes margin horizontal(eg: m-h-10)</p>\n        <p m-t-15 m-b-15>m-v-number - denotes margin vertical(eg: m-v-10)</p>\n        <p m-t-15 m-b-15>p-t/b/-(number) - denotes padding-top/bottom(eg: p-t-5,p-b-10)</p>\n        <p m-t-15 m-b-15>p-h-number - denotes padding horizontal(eg: p-h-10)</p>\n        <p m-t-15 m-b-15>p-v-number - denotes padding vertical(eg: p-v-10)</p>\n        <p m-t-15 m-b-15>.dis-block(display:block)</p>\n        <p m-t-15 m-b-15>.dis-inline(display:inline-block)</p>\n        <p>.visible(visibility:hidden)</p>\n      </div>\n      <div m-v-30>\n        <h2 ion-text color="text">Shadow</h2>\n        <hr>\n        <div class="boxes box-1">Default box-shadow</div>\n        <div class="boxes box-2">Right sided Shadow</div>\n        <div class="boxes box-3">Smaller radius/blur shadow</div>\n      </div>\n      <hr>\n    </div>\n\n\n\n   </div>\n</ion-content>\n\n<!-- Body Ends -->\n\n\n\n\n\n\n\n\n\n\n\n\n'/*ion-inline-end:"/Applications/XAMPP/xamppfiles/htdocs/Dilbert-WebApp/Dilbert-WebApp/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/Applications/XAMPP/xamppfiles/htdocs/Dilbert-WebApp/Dilbert-WebApp/src/pages/home/home.html"*/'\n<!-- Site header goes here -->\n\n<ion-header class="main-header shadow-1">\n   <div class="container">\n      <!-- Navbar Start-->\n      <ion-navbar class="dilbert-nav">\n        <!--  <button ion-button menuToggle m-h-0 class="ham">\n            <ion-icon name="menu"></ion-icon>\n         </button> -->\n         <div class="dilber-nav__left nav-cols">\n           <!--  <button ion-button icon-only clear p-h-10>\n               <i class="custom-icon flower"></i>\n            </button>   \n            <button ion-button icon-only clear p-h-10>\n               <i class="custom-icon summary"></i>\n            </button> -->\n            <ion-title start font-weight-4 class="brand-name"><p ion-text color="secondary" no-margin>Ajency.in</p></ion-title>\n         </div>\n         <div class="dilbert-nav__right nav-cols">\n            <!-- Notification -->\n            <!-- <button ion-button icon-only clear m-r-10 class="notify hvr-pulse-grow">\n               <ion-icon name="notifications-outline" color="dark"></ion-icon>\n            </button> -->\n            <!-- User profile -->\n            <!-- <button ion-button clear icon-only p-v-20 (click)="openPopover($event)" class="user-profile">\n              <ion-item p-l-0>\n                <ion-avatar item-start m-h-0>\n                  <img src="https://ionicframework.com/dist/preview-app/www/assets/img/avatar-ts-woody.png" />\n                </ion-avatar>\n                <ion-icon name="arrow-dropdown" p-r-0 p-l-5></ion-icon>\n              </ion-item>\n            </button> -->\n            <!-- User profile ends -->\n         </div>\n      </ion-navbar>\n      <!-- Navbar ends -->\n   </div>\n</ion-header>\n\n<!-- Site header ends -->\n\n\n<!-- Body starts -->\n\n<ion-content padding>\n   <div class="container" p-h-20>\n\n      <ion-grid class="grid dashboard" m-t-15 p-h-30>\n         <ion-row class="row dashboard__row">\n            <ion-col class="col" col-12 m-b-20>\n               <!-- Heading -->\n               <div class="section-title">\n                  <i class="custom-icon summary" m-r-10></i><h5 class="page-title">My Summary</h5>\n               </div>\n            </ion-col>               \n            <ion-col class="col dashboard__summary" col-12 col-md-12 col-lg-8 p-h-0 p-v-0>\n               <!-- Summary section -->\n               <div class="summary">\n                  <!-- Summary sidebar section (From component-sidebar)-->\n                  <summary-sidebar class="summary__sidebar" p-h-20 p-v-10></summary-sidebar>\n                  <!-- Summary sidebar ends -->\n                  <!-- Summary content -->\n                  <summary-content class="summary__content" p-h-20 p-v-10></summary-content>\n                  <!-- Summary content ends -->\n               </div>\n            </ion-col>\n            <ion-col class="col dashboard__leaves" col-12 col-md-12 col-lg-4 p-h-0 p-v-0>\n               <!-- <ion-content class="overflow-scroll" scroll="true">\n                  <div class="section-title">\n                  <i class="custom-icon summary" m-r-10></i><h6 class="main-title">My Summary</h6>\n               </div>\n               </ion-content> -->\n               <div text-center><button ion-button (click)="openStyle()">Style Guide</button></div>\n            </ion-col>\n         </ion-row>\n      </ion-grid>\n\n   </div>\n</ion-content>\n\n<!-- Body Ends -->\n\n\n\n\n\n\n\n\n\n\n\n\n'/*ion-inline-end:"/Applications/XAMPP/xamppfiles/htdocs/Dilbert-WebApp/Dilbert-WebApp/src/pages/home/home.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* PopoverController */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* PopoverController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* PopoverController */]) === "function" && _b || Object])
 ], HomePage);
 
+var _a, _b;
 //# sourceMappingURL=home.js.map
 
 /***/ }),
@@ -55809,7 +55889,7 @@ ListPage = ListPage_1 = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
         selector: 'page-list',template:/*ion-inline-start:"/Applications/XAMPP/xamppfiles/htdocs/Dilbert-WebApp/Dilbert-WebApp/src/pages/list/list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n      <ion-icon [name]="item.icon" item-left></ion-icon>\n      {{item.title}}\n      <div class="item-note" item-right>\n        {{item.note}}\n      </div>\n    </button>\n  </ion-list>\n  <div *ngIf="selectedItem" padding>\n    You navigated here from <b>{{selectedItem.title}}</b>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Applications/XAMPP/xamppfiles/htdocs/Dilbert-WebApp/Dilbert-WebApp/src/pages/list/list.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], ListPage);
 
 var ListPage_1;
@@ -55846,7 +55926,7 @@ var PopoverContentPage = (function () {
 PopoverContentPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({template:/*ion-inline-start:"/Applications/XAMPP/xamppfiles/htdocs/Dilbert-WebApp/Dilbert-WebApp/src/pages/popover/popover.html"*/'\n<!-- User profile contents -->\n\n<ion-list m-v-0 class="profile-dropdown">\n	<button ion-item (click)="close()"><ion-icon name="md-person" p-r-5></ion-icon> Profile Information</button>\n	<button ion-item (click)="close()"><ion-icon name="star" p-r-5></ion-icon> View Summary</button>\n	<button ion-item (click)="close()"><ion-icon name="md-person" p-r-5></ion-icon> Edit Profile</button>\n	<button ion-item (click)="close()"><ion-icon name="md-power" p-r-5></ion-icon> Logout</button>\n</ion-list>\n'/*ion-inline-end:"/Applications/XAMPP/xamppfiles/htdocs/Dilbert-WebApp/Dilbert-WebApp/src/pages/popover/popover.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* ViewController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ViewController */]])
 ], PopoverContentPage);
 
 //# sourceMappingURL=popover.js.map
@@ -74373,15 +74453,26 @@ module.exports = g;
 
 /***/ }),
 /* 194 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-function webpackEmptyContext(req) {
-	throw new Error("Cannot find module '" + req + "'.");
-}
-webpackEmptyContext.keys = function() { return []; };
-webpackEmptyContext.resolve = webpackEmptyContext;
-module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 194;
+var map = {
+	"../pages/style-guide/style-guide.module": [
+		264,
+		1
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];	if(!ids)
+		return Promise.reject(new Error("Cannot find module '" + req + "'."));
+	return __webpack_require__.e(ids[1]).then(function() {
+		return __webpack_require__(ids[0]);
+	});
+};
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+module.exports = webpackAsyncContext;
+webpackAsyncContext.id = 194;
 
 
 /***/ }),
@@ -74400,6 +74491,7 @@ webpackEmptyContext.id = 194;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_popover_popover__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_summary_sidebar_summary_sidebar__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_summary_content_summary_content__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_style_guide_style_guide__ = __webpack_require__(265);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -74407,6 +74499,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -74431,18 +74524,24 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */],
             __WEBPACK_IMPORTED_MODULE_8__pages_popover_popover__["a" /* PopoverContentPage */],
             __WEBPACK_IMPORTED_MODULE_9__components_summary_sidebar_summary_sidebar__["a" /* SummarySidebarComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__components_summary_content_summary_content__["a" /* SummaryContentComponent */]
+            __WEBPACK_IMPORTED_MODULE_10__components_summary_content_summary_content__["a" /* SummaryContentComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_style_guide_style_guide__["a" /* StyleGuidePage */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */]),
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
+                links: [
+                    { loadChildren: '../pages/style-guide/style-guide.module#StyleGuidePageModule', name: 'StyleGuidePage', segment: 'style-guide', priority: 'low', defaultHistory: [] }
+                ]
+            }),
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
         entryComponents: [
             __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
             __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */],
             __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */],
-            __WEBPACK_IMPORTED_MODULE_8__pages_popover_popover__["a" /* PopoverContentPage */]
+            __WEBPACK_IMPORTED_MODULE_8__pages_popover_popover__["a" /* PopoverContentPage */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_style_guide_style_guide__["a" /* StyleGuidePage */]
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__["a" /* StatusBar */],
@@ -74697,13 +74796,13 @@ var MyApp = (function () {
     return MyApp;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Nav */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Nav */])
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({template:/*ion-inline-start:"/Applications/XAMPP/xamppfiles/htdocs/Dilbert-WebApp/Dilbert-WebApp/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Applications/XAMPP/xamppfiles/htdocs/Dilbert-WebApp/Dilbert-WebApp/src/app/app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
 
 //# sourceMappingURL=app.component.js.map
@@ -108461,7 +108560,7 @@ function PanRecognizer_tsickle_Closure_declarations() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_120__components_virtual_scroll_virtual_item__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_121__components_virtual_scroll_virtual_scroll__ = __webpack_require__(169);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IonicModule; });
-/* unused harmony export IonicPageModule */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return IonicPageModule; });
 /* unused harmony export provideLocationStrategy */
 /**
  * Import Angular
@@ -109010,7 +109109,7 @@ function provideLocationStrategy(platformLocationStrategy, baseHref, config) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export IonicPage */
+/* harmony export (immutable) */ __webpack_exports__["a"] = IonicPage;
 /**
  * \@name IonicPage
  * \@description
@@ -112151,6 +112250,52 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
 //# sourceMappingURL=main.js.map
+
+/***/ }),
+/* 264 */,
+/* 265 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StyleGuidePage; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the StyleGuidePage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var StyleGuidePage = (function () {
+    function StyleGuidePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    StyleGuidePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad StyleGuidePage');
+    };
+    return StyleGuidePage;
+}());
+StyleGuidePage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        selector: 'page-style-guide',template:/*ion-inline-start:"/Applications/XAMPP/xamppfiles/htdocs/Dilbert-WebApp/Dilbert-WebApp/src/pages/style-guide/style-guide.html"*/'<!--\n  Generated template for the StyleGuidePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n    <ion-navbar>\n        <ion-title>style-guide</ion-title>\n    </ion-navbar>\n</ion-header>\n<ion-content padding>\n    <div class="style-guide" m-t-20 p-h-50>\n        <h2 font-weight-3 ion-text color="primary" text-center>Style Guide -- Version - 1.0</h2>\n        <hr>\n        <div m-v-30>\n            <h2 ion-text color="text">Headings</h2>\n            <hr>\n            <h1>Heading H1</h1>\n            <h2>Heading H2</h2>\n            <h3>Heading H3</h3>\n            <h4>Heading H4</h4>\n            <h5>Heading H5</h5>\n            <h6>Heading H6</h6>\n        </div>\n        <hr>\n        <div class="color-code" m-v-30>\n            <h2 ion-text color="text">Colors</h2>\n            <hr>\n            <div class="code-container">\n                <div class="primary">\n                    <p class="color"></p>\n                    <p>Primary</p>\n                </div>\n                <div class="secondary">\n                    <p class="color"></p>\n                    <p>Secondary</p>\n                </div>\n                <div class="text">\n                    <p class="color"></p>\n                    <p>Text</p>\n                </div>\n                <div class="success">\n                    <p class="color"></p>\n                    <p>Success</p>\n                </div>\n                <div class="danger">\n                    <p class="color"></p>\n                    <p>Danger</p>\n                </div>\n            </div>\n        </div>\n        <hr>\n        <div m-v-30>\n            <h2 ion-text color="text">Typography</h2>\n            <hr>\n            <h5>Page Title</h5>\n            <p>Element Title</p>\n            <span ion-title color="text">Labels</span>\n            <span class="dis-block xx-small" m-t-15>xx Smaller label</span>\n            <br>\n            <span class="dis-block xxx-small">xxx smaller label</span>\n        </div>\n        <hr>\n        <div m-v-30>\n            <h2 ion-text color="text">Font Weights</h2>\n            <hr>\n            <p font-weight-6>Font-weight-6(Bolder)</p>\n            <p font-weight-5>Font-weight-5(Bold)</p>\n            <p font-weight-4>Font-weight-4(Medium)</p>\n            <p font-weight-3>Font-weight-3(Regular)</p>\n            <p font-weight-1>Font-weight-1(Lighter)</p>\n        </div>\n        <div m-v-30>\n            <h2 ion-text color="text">Icons</h2>\n            <hr>\n            <ion-icon name="calendar" class="icon-size full" m-v-10></ion-icon> - Full\n            <br>\n            <ion-icon name="calendar" class="icon-size mini"></ion-icon> - Mini\n        </div>\n        <hr>\n        <div m-v-30>\n            <h2 ion-text color="text">Utility Classes</h2>\n            <hr>\n            <p m-t-15 m-b-15>m-t/b/-(number) - denotes margin-top/bottom(eg: m-t-5,m-b-10)</p>\n            <p m-t-15 m-b-15>m-h-number - denotes margin horizontal(eg: m-h-10)</p>\n            <p m-t-15 m-b-15>m-v-number - denotes margin vertical(eg: m-v-10)</p>\n            <p m-t-15 m-b-15>p-t/b/-(number) - denotes padding-top/bottom(eg: p-t-5,p-b-10)</p>\n            <p m-t-15 m-b-15>p-h-number - denotes padding horizontal(eg: p-h-10)</p>\n            <p m-t-15 m-b-15>p-v-number - denotes padding vertical(eg: p-v-10)</p>\n            <p m-t-15 m-b-15>.dis-block(display:block)</p>\n            <p m-t-15 m-b-15>.dis-inline(display:inline-block)</p>\n            <p>.visible(visibility:hidden)</p>\n        </div>\n        <div m-v-30>\n            <h2 ion-text color="text">Shadow</h2>\n            <hr>\n            <div class="boxes box-1">Default box-shadow</div>\n            <div class="boxes box-2">Right sided Shadow</div>\n            <div class="boxes box-3">Smaller radius/blur shadow</div>\n        </div>\n        <hr>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Applications/XAMPP/xamppfiles/htdocs/Dilbert-WebApp/Dilbert-WebApp/src/pages/style-guide/style-guide.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+], StyleGuidePage);
+
+//# sourceMappingURL=style-guide.js.map
 
 /***/ })
 /******/ ]);

@@ -61030,6 +61030,7 @@ summary-sidebar .full-card .week-list .active {
   ion-app.app-root .dashboard {
     margin: 0 -20px;
     width: calc(100% + 40px);
+    padding: 5px;
   }
   .summary {
     -webkit-flex-direction: column;
@@ -61092,37 +61093,37 @@ summary-sidebar .full-card .week-list .active {
   font-size: 1.6em;
 }
 
-.style-guide {
+page-style-guide .style-guide {
   width: 70%;
   margin: 0 auto;
 }
 
-.style-guide .color-code .color {
+page-style-guide .style-guide .color-code .color {
   height: 100px;
   width: 100px;
 }
 
-.style-guide .color-code .primary .color {
+page-style-guide .style-guide .color-code .primary .color {
   background-color: #6943bf;
 }
 
-.style-guide .color-code .secondary .color {
+page-style-guide .style-guide .color-code .secondary .color {
   background-color: #facf21;
 }
 
-.style-guide .color-code .text .color {
+page-style-guide .style-guide .color-code .text .color {
   background-color: #868686;
 }
 
-.style-guide .color-code .success .color {
+page-style-guide .style-guide .color-code .success .color {
   background-color: #03b8b2;
 }
 
-.style-guide .color-code .danger .color {
+page-style-guide .style-guide .color-code .danger .color {
   background-color: #fa5777;
 }
 
-.style-guide .code-container {
+page-style-guide .style-guide .code-container {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -61131,7 +61132,7 @@ summary-sidebar .full-card .week-list .active {
   justify-content: space-between;
 }
 
-.style-guide .boxes {
+page-style-guide .style-guide .boxes {
   padding: 20px;
   height: 150px;
   margin-top: 20px;
@@ -61146,14 +61147,14 @@ summary-sidebar .full-card .week-list .active {
   justify-content: center;
 }
 
-.style-guide .box-1 {
+page-style-guide .style-guide .box-1 {
   box-shadow: 0px 0px 30px -4px rgba(0, 0, 0, 0.12);
 }
 
-.style-guide .box-2 {
+page-style-guide .style-guide .box-2 {
   box-shadow: 5px 0 20px -1px rgba(6, 6, 6, 0.06);
 }
 
-.style-guide .box-3 {
+page-style-guide .style-guide .box-3 {
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.13);
 }
