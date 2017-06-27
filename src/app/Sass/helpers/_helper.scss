@@ -41,6 +41,15 @@
     visibility: hidden;
 }
 
+.icon-size{
+    &.full{
+        font-size: 1.6em;
+    }
+    &.mini{
+        font-size: 1.1em;
+    }
+}
+
 
 // ---------------------------
 // MARGIN & PADDING LOOP -----------

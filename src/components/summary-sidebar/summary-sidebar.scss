@@ -94,9 +94,9 @@ summary-sidebar {
             background-color: #f8f8fa;
             border-top: 2px solid #f6f5f8;
             border-bottom: 2px solid #f6f5f8;
-            .icon {
-                font-size: 1.6em;
-            }
+            // .icon {
+            //     font-size: 1.6em;
+            // }
         }
         .week-list {
             .week-container {
@@ -114,23 +114,26 @@ summary-sidebar {
                         padding: 0;
                     }
                 }
-                p {
-                    font-size: 1.1em;
-                }
-                h6 {
-                    font-size: 1.4em;
-                    font-weight: 300;
-                }
             }
             &__row {
                 justify-content: space-between;
                 margin: 0 -20px;
                 padding: 10px 20px;
             }
-            &__time {
-                .icon {
-                    font-size: 1.1em;
-                }
+            // &__time {
+            //     .icon {
+            //         font-size: 1.1em;
+            //     }
+            // }
+            .day-title{
+                font-size: 1.1em;    
+            }
+            .session-start{
+                font-size: 0.95em;
+            }
+            .total-time {
+                font-size: 1.4em;
+                font-weight: 300;
             }
             .active {
                 background-color: lighten(color($colors, primary), 45%);
