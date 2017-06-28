@@ -29860,7 +29860,7 @@ var /** @type {?} */ KEY_TAB = 9;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__components_modal_modal_controller__ = __webpack_require__(137);
 /* unused harmony reexport ModalController */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_nav_nav__ = __webpack_require__(68);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_54__components_nav_nav__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_54__components_nav_nav__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_nav_nav_pop__ = __webpack_require__(66);
 /* unused harmony reexport NavPop */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_nav_nav_pop_anchor__ = __webpack_require__(139);
@@ -29890,7 +29890,7 @@ var /** @type {?} */ KEY_TAB = 9;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__components_popover_popover_component__ = __webpack_require__(73);
 /* unused harmony reexport PopoverCmp */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__components_popover_popover_controller__ = __webpack_require__(143);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_69__components_popover_popover_controller__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_69__components_popover_popover_controller__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__components_radio_radio_button__ = __webpack_require__(144);
 /* unused harmony reexport RadioButton */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__components_radio_radio_group__ = __webpack_require__(75);
@@ -29957,7 +29957,7 @@ var /** @type {?} */ KEY_TAB = 9;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_101__components_toolbar_toolbar_title__ = __webpack_require__(168);
 /* unused harmony reexport ToolbarTitle */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_102__components_toolbar_navbar__ = __webpack_require__(35);
-/* unused harmony reexport Navbar */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_102__components_toolbar_navbar__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_103__components_thumbnail_thumbnail__ = __webpack_require__(160);
 /* unused harmony reexport Thumbnail */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_104__components_typography_typography__ = __webpack_require__(169);
@@ -29977,7 +29977,7 @@ var /** @type {?} */ KEY_TAB = 9;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_110__platform_dom_controller__ = __webpack_require__(8);
 /* unused harmony reexport DomController */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_111__platform_platform__ = __webpack_require__(3);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_111__platform_platform__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return __WEBPACK_IMPORTED_MODULE_111__platform_platform__["a"]; });
 /* unused harmony reexport setupPlatform */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_112__tap_click_haptic__ = __webpack_require__(36);
 /* unused harmony reexport Haptic */
@@ -55876,15 +55876,30 @@ var HomePage = (function () {
         };
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__style_guide_style_guide__["a" /* StyleGuidePage */], {}, navOption);
     };
+    HomePage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        this.navBar.backButtonClick = function (e) {
+            var navOption = {
+                animation: "ios-transition"
+            };
+            // todo something
+            _this.navCtrl.pop(navOption);
+        };
+    };
     return HomePage;
 }());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Navbar */]),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Navbar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Navbar */]) === "function" && _a || Object)
+], HomePage.prototype, "navBar", void 0);
 HomePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
         selector: 'page-home',template:/*ion-inline-start:"/Applications/XAMPP/xamppfiles/htdocs/Dilbert-WebApp/Dilbert-WebApp/src/pages/home/home.html"*/'\n<!-- Site header goes here -->\n\n<ion-header class="main-header shadow-1">\n   <div class="container">\n      <!-- Navbar Start-->\n      <ion-navbar class="dilbert-nav">\n        <!--  <button ion-button menuToggle m-h-0 class="ham">\n            <ion-icon name="menu"></ion-icon>\n         </button> -->\n         <div class="dilber-nav__left nav-cols">\n           <!--  <button ion-button icon-only clear p-h-10>\n               <i class="custom-icon flower"></i>\n            </button>   \n            <button ion-button icon-only clear p-h-10>\n               <i class="custom-icon summary"></i>\n            </button> -->\n            <ion-title start font-weight-4 class="brand-name"><p ion-text color="secondary" no-margin>Ajency.in</p></ion-title>\n         </div>\n         <div class="dilbert-nav__right nav-cols">\n            <!-- Notification -->\n            <!-- <button ion-button icon-only clear m-r-10 class="notify hvr-pulse-grow">\n               <ion-icon name="notifications-outline" color="dark"></ion-icon>\n            </button> -->\n            <!-- User profile -->\n            <!-- <button ion-button clear icon-only p-v-20 (click)="openPopover($event)" class="user-profile">\n              <ion-item p-l-0>\n                <ion-avatar item-start m-h-0>\n                  <img src="https://ionicframework.com/dist/preview-app/www/assets/img/avatar-ts-woody.png" />\n                </ion-avatar>\n                <ion-icon name="arrow-dropdown" p-r-0 p-l-5></ion-icon>\n              </ion-item>\n            </button> -->\n            <!-- User profile ends -->\n         </div>\n      </ion-navbar>\n      <!-- Navbar ends -->\n   </div>\n</ion-header>\n\n<!-- Site header ends -->\n\n\n<!-- Body starts -->\n\n<ion-content padding>\n   <div class="container" p-h-20>\n\n      <ion-grid class="grid dashboard" m-t-15 p-h-30>\n         <ion-row class="row dashboard__row">\n            <ion-col class="col" col-12 m-b-20>\n               <!-- Heading -->\n               <div class="section-title">\n                  <i class="custom-icon summary" m-r-10></i><h5 class="page-title">My Summary</h5>\n               </div>\n            </ion-col>               \n            <ion-col class="col dashboard__summary" col-12 col-md-12 col-lg-8 p-h-0 p-v-0>\n               <!-- Summary section -->\n               <div class="summary">\n                  <!-- Summary sidebar section (From component-sidebar)-->\n                  <summary-sidebar class="summary__sidebar" p-h-20></summary-sidebar>\n                  <!-- Summary sidebar ends -->\n                  <!-- Summary content -->\n                  <summary-content class="summary__content xl-no-show" p-h-20></summary-content>\n                  <!-- Summary content ends -->\n               </div>\n            </ion-col>\n            <ion-col class="col dashboard__leaves" col-12 col-md-12 col-lg-4 p-h-0 p-v-0>\n               <!-- <ion-content class="overflow-scroll" scroll="true">\n                  <div class="section-title">\n                  <i class="custom-icon summary" m-r-10></i><h6 class="main-title">My Summary</h6>\n               </div>\n               </ion-content> -->\n               <div text-center m-t-20><button ion-button (click)="openStyle()">Style Guide</button></div>\n            </ion-col>\n         </ion-row>\n      </ion-grid>\n\n   </div>\n</ion-content>\n\n<!-- Body Ends -->\n\n\n\n\n\n\n\n\n\n\n\n\n'/*ion-inline-end:"/Applications/XAMPP/xamppfiles/htdocs/Dilbert-WebApp/Dilbert-WebApp/src/pages/home/home.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* PopoverController */]])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* PopoverController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* PopoverController */]) === "function" && _c || Object])
 ], HomePage);
 
+var _a, _b, _c;
 //# sourceMappingURL=home.js.map
 
 /***/ }),
@@ -74852,13 +74867,13 @@ var MyApp = (function () {
     return MyApp;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Nav */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Nav */])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Nav */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Nav */])
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({template:/*ion-inline-start:"/Applications/XAMPP/xamppfiles/htdocs/Dilbert-WebApp/Dilbert-WebApp/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Applications/XAMPP/xamppfiles/htdocs/Dilbert-WebApp/Dilbert-WebApp/src/app/app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
 
 //# sourceMappingURL=app.component.js.map
