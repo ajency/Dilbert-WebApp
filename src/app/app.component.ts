@@ -1,3 +1,4 @@
+import { AppService } from './app-service.ts';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -5,6 +6,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+
+interface Window {
+  addEventListener: any;
+  onlineToast: any;
+  offlineToast: any;
+}
+
+declare var window: Window;
 
 @Component({
   templateUrl: 'app.html'
@@ -14,9 +23,9 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,private appservice: AppService,) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -33,7 +42,42 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      //this.checkNetwork();
     });
+  }
+
+  checkNetwork() {
+    this.platform.ready().then(() => {
+      window['isUpdateAvailable']
+        .then(isAvailable => {
+          if (isAvailable) {
+            this.appservice.presentToast(`New Update available! Reload the webapp to see the latest juicy changes.`, 'warn');
+          }
+        });
+
+      var self = this;
+      window.addEventListener('online', function (e) {
+        self.updateOnlineStatus(self.appservice);
+      });
+      window.addEventListener('offline', function (e) {
+        self.updateOnlineStatus(self.appservice);
+      });
+    });
+  }
+
+
+  updateOnlineStatus(service) {
+    let body = document.getElementsByTagName('body')[0];
+    if (navigator.onLine) {
+      window.onlineToast = service.presentToast('You are online!', 'success');
+      if (window.offlineToast != null) {
+        window.offlineToast.dismiss();
+      }
+      body.classList.remove("app-is-offline");
+    } else {
+      window.offlineToast = service.presentToast('You are offline!', 'warn');
+      body.classList.add("app-is-offline");
+    }
   }
 
   openPage(page) {

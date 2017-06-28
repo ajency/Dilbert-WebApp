@@ -1,3 +1,4 @@
+import { AppService } from './app-service.ts';
 import { SummarySidebarService } from './../components/summary-sidebar/summary-sidebar.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -13,7 +14,7 @@ import { ListPage } from '../pages/list/list';
 import { PopoverContentPage } from '../pages/popover/popover';
 import { SummarySidebarComponent } from '../components/summary-sidebar/summary-sidebar';
 import { SummaryContentComponent } from '../components/summary-content/summary-content';
-
+import { MomentModule } from 'angular2-moment';
 @NgModule({
   declarations: [
     MyApp,
@@ -26,7 +27,8 @@ import { SummaryContentComponent } from '../components/summary-content/summary-c
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    MomentModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -39,6 +41,7 @@ import { SummaryContentComponent } from '../components/summary-content/summary-c
     StatusBar,
     SplashScreen,
     SummarySidebarService,
+    AppService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

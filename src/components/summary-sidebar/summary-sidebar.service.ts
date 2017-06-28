@@ -5,14 +5,16 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class SummarySidebarService {
-    private sidebarDataURL:"http://www.mocky.io/v2/594cf0d61100007a22a3d1d9";
+    //private sidebarDataURL = "bin/70044450-5e85-4f25-b16c-dd71603ca203?foo=bar&foo=baz";
 
     constructor(private http: Http) { }
 
-    getSideBarData(currentDate: String): Promise<SideBarData> {
-        return this.http.get(this.sidebarDataURL)
+    getSideBarData(currentDate: String): Promise<any> {
+        return this.http.get('assets/data/side_menu_data.json')
             .toPromise()
-            .then(response => response.json().data as SideBarData)
+            .then((response) => {
+                 return response.json() as SideBarData
+            })
             .catch(this.handleError);
     }
 

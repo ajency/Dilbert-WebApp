@@ -1,6 +1,8 @@
-import { SideBarData } from './summary-sidbar.data';
-import { SummarySidebarService } from './summary-sidebar.service';
-import { Component } from '@angular/core';
+import { SideBarData, WeekData } from './summary-sidbar.data';
+import { Component, Input } from '@angular/core';
+import { MomentModule } from 'angular2-moment';
+import * as moment from 'moment';
+
 
 /**
  * Generated class for the SummarySidebarComponent component.
@@ -10,19 +12,31 @@ import { Component } from '@angular/core';
  */
 @Component({
   selector: 'summary-sidebar',
-  templateUrl: 'summary-sidebar.html',
-  providers: [SummarySidebarService]
+  templateUrl: 'summary-sidebar.html'
 })
 export class SummarySidebarComponent {
+  data: SideBarData;
+  weekData:WeekData;
+  currentTotal:number;
 
-  text: string;
-  sideBarData: SideBarData;
+  @Input()
+  set sideBarData(passedData: SideBarData) {
+    this.data= passedData;
+    this.data.week.forEach((week) => {
+      if(week.is_current){
+        this.weekData=week;
+      }
+    });
 
-  constructor(public sidebarService: SummarySidebarService) {
-    console.log('Hello SummarySidebarComponent Component');
-    this.text = 'Hello World';
-    this.sidebarService.getSideBarData("").then(sideBarData => this.sideBarData = sideBarData);
-    console.log(SideBarData);
+    this.data.dates.forEach((date) => {
+      if(date.week_no== this.weekData.week_no){
+        var currenttime= moment(date.hours_completed,"hh:mm:ss")
+      }
+      
+    });
   }
 
+  get sideBarData(): SideBarData { return this.data; }
+
+  constructor() {}
 }

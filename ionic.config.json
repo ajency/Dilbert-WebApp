@@ -1,5 +1,9 @@
 {
-  "name": "Dilbert-WebApp",
-  "app_id": "",
-  "type": "ionic-angular"
+    "name": "Dilbert-WebApp",
+    "app_id": "",
+    "type": "ionic-angular",
+    "proxies": [{
+        "path": "/bin",
+        "proxyUrl": "http://mockbin.org/bin"
+    }]
 }
