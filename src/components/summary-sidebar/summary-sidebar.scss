@@ -153,6 +153,7 @@ summary-sidebar {
                 padding: 0;
                 .time{
                     padding: 0 0 0.3em 0;
+                    font-size: 2.2em;
                 }
                 .day{
                     display: flex;
@@ -182,6 +183,11 @@ summary-sidebar {
         .full-card{
             &__header{
                 display: none;
+            }
+            &__body{
+                .week-list{
+                    margin: 0 -16px;
+                }
             }
         }
     }

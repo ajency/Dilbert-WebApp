@@ -22,6 +22,12 @@ page-style-guide {
 	        .danger .color{
 	            background-color: color($colors,'danger');
 	        }
+	        .text-lighter .color{
+	            background-color: color($colors,'text-lighter');
+	        }
+	        .text-darker .color{
+	            background-color: color($colors,'text-darker');
+	        }
 	    }
 	    .code-container{
 	        display: flex;

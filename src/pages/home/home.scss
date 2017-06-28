@@ -54,6 +54,7 @@ page-home {}
 @media screen and (max-width: 600px){
     .section-title{
         margin: -8px 0;
+        padding-left: 1em;
     }
     .page-title{
         font-size: 1.2em;
@@ -79,6 +80,13 @@ page-home {}
         display: none;
     }
 }
+
+@media screen and (max-width: 960px){
+    ion-app.app-root .dashboard{
+        padding: 0;
+    }
+}
+
 
 // Common flexbox call
 
