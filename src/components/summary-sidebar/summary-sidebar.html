@@ -7,19 +7,21 @@
             <p ion-text no-margin color="text">43.43hr/45hr</p>
             <div class="week-loader" style="width: 80%"></div>
         </div>
-        <div class="current-card__body flex-row" p-v-25>
-            <h3 class="time" m-t-0 p-r-40>3:02<span class="xxx-small">hr</span></h3>
-            <div class="day">
-                <p ion-text color="primary" no-margin m-b-5>Today</p>
-                <span ion-text color="text">Friday 12, May</span>
+        <div class="timeline-container">
+            <div class="current-card__body flex-row" p-v-25>
+                <h3 class="time" m-t-0 p-r-40>3:02<span class="xxx-small">hr</span></h3>
+                <div class="day">
+                    <p ion-text color="primary" no-margin m-b-5 class="day-title">Today</p>
+                    <span ion-text color="text">Friday 12, May</span>
+                </div>
             </div>
-        </div>
-        <div class="current-card__footer flex-row">
-            <div class="timing in" p-h-12 p-v-12>
-                <i class="custom-icon indoor"></i> <span>9:35am</span>
-            </div>
-            <div class="timing out" p-h-12 p-v-12>
-                <i class="custom-icon outdoor"></i> <span ion-text color="success">Online</span>
+            <div class="current-card__footer flex-row">
+                <div class="timing in" p-h-12 p-v-12>
+                    <i class="custom-icon indoor"></i> <span>9:35am</span>
+                </div>
+                <div class="timing out" p-h-12 p-v-12>
+                    <i class="custom-icon outdoor"></i> <span ion-text color="success">Online</span>
+                </div>
             </div>
         </div>
     </div>
@@ -35,7 +37,7 @@
         <div class="full-card__body">
             <!-- Week list -->
             <ul class="week-list list-control overflow-active">
-                <button ion-item class="week-container" m-v-15>
+                <button ion-item class="week-container" m-v-15 (click)="openSummary()">
                     <li class="week-list__row flex-row">
                         <div class="week-list__day">
                             <p class="day-title" m-t-0 m-b-8 font-weight-5>Fri</p>
@@ -53,7 +55,7 @@
                         </div>
                     </li>
                 </button>
-                <button ion-item class="week-container" m-v-15>
+                <button ion-item class="week-container" m-v-15 (click)="openSummary()">
                     <li class="week-list__row flex-row">
                         <div class="week-list__day">
                             <p class="day-title" m-t-0 m-b-8 font-weight-5>Thu</p>
@@ -71,7 +73,7 @@
                         </div>
                     </li>
                 </button>
-                <button ion-item class="week-container active" m-v-15>
+                <button ion-item class="week-container active" m-v-15 (click)="openSummary()">
                     <li class="week-list__row flex-row">
                         <div class="week-list__day">
                             <p class="day-title" m-t-0 m-b-8 font-weight-5>Wed</p>
@@ -89,7 +91,7 @@
                         </div>
                     </li>
                 </button>
-                <button ion-item class="week-container" m-v-15>
+                <button ion-item class="week-container" m-v-15 (click)="openSummary()">
                     <li class="week-list__row flex-row">
                         <div class="week-list__day">
                             <p class="day-title" m-t-0 m-b-8 font-weight-5>Tue</p>
@@ -107,7 +109,7 @@
                         </div>
                     </li>
                 </button>
-                <button ion-item class="week-container" m-v-15>
+                <button ion-item class="week-container" m-v-15 (click)="openSummary()">
                     <li class="week-list__row flex-row">
                         <div class="week-list__day">
                             <p class="day-title" m-t-0 m-b-8 font-weight-5>Mon</p>

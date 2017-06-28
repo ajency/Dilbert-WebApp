@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+
+import {MySummaryPage} from '../../pages/my-summary/my-summary';
 
 /**
  * Generated class for the SummarySidebarComponent component.
@@ -14,9 +17,16 @@ export class SummarySidebarComponent {
 
   text: string;
 
-  constructor() {
+  constructor(public navCtrl: NavController) {
     console.log('Hello SummarySidebarComponent Component');
     this.text = 'Hello World';
+  }
+
+  openSummary(){
+  	var navOption = {
+      animation: "ios-transition"
+    }
+    this.navCtrl.push(MySummaryPage,{},navOption);
   }
 
 }

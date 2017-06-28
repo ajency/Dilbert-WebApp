@@ -15,6 +15,8 @@ import { SummaryContentComponent } from '../components/summary-content/summary-c
 
 import {StyleGuidePage} from '../pages/style-guide/style-guide';
 
+import {MySummaryPage} from '../pages/my-summary/my-summary';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -23,7 +25,8 @@ import {StyleGuidePage} from '../pages/style-guide/style-guide';
     PopoverContentPage,
     SummarySidebarComponent,
     SummaryContentComponent,
-    StyleGuidePage
+    StyleGuidePage,
+    MySummaryPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import {StyleGuidePage} from '../pages/style-guide/style-guide';
     HomePage,
     ListPage,
     PopoverContentPage,
-    StyleGuidePage
+    StyleGuidePage,
+    MySummaryPage
   ],
   providers: [
     StatusBar,

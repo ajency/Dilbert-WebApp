@@ -26,6 +26,12 @@ page-style-guide {
 	    .code-container{
 	        display: flex;
 	        justify-content: space-between;
+	        &.shadow{
+	        	justify-content: flex-start;
+	        	& > div{
+	        		margin-right: 1.5em;
+	        	}
+	        }
 	    }
 	    .boxes{
 	        padding: 20px;
@@ -44,5 +50,21 @@ page-style-guide {
 	    .box-3{
 	        box-shadow: $shadow-3;
 	    }
+	}
+}
+
+@media screen and (max-width: 600px) {
+	ion-app.app-root .style-guide{
+		padding: 0;
+		width: 100%;
+		h2{
+			font-size: 1.8em;
+		}
+		.code-container{
+			flex-wrap:wrap;
+			& > div{
+				margin-right: 1em;
+			}
+		}
 	}
 }

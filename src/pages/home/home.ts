@@ -20,7 +20,10 @@ export class HomePage {
     });
   }
   openStyle(){
-    this.navCtrl.push(StyleGuidePage);
+    var navOption = {
+      animation: "ios-transition"
+      }
+    this.navCtrl.push(StyleGuidePage,{},navOption);
   }
 
 }

@@ -60831,7 +60831,7 @@ summary-sidebar .current-card__header {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin: 0 -20px;
-  padding: 10px 20px 20px 20px;
+  padding: 20px;
   border-bottom: 3px solid #eee;
   position: relative;
 }
@@ -60970,6 +60970,51 @@ summary-sidebar .full-card .week-list .active {
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.13);
 }
 
+@media screen and (max-width: 600px) {
+  ion-app.app-root .current-card__body {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding: 0;
+  }
+  ion-app.app-root .current-card__body .time {
+    padding: 0 0 0.3em 0;
+  }
+  ion-app.app-root .current-card__body .day {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  ion-app.app-root .current-card__body .day-title {
+    margin: 0;
+    padding-right: 0.5em;
+  }
+  ion-app.app-root .current-card__footer {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border: 0;
+    margin: 0;
+  }
+  ion-app.app-root .current-card__footer .timing.in {
+    border: 0;
+    padding-bottom: 0;
+    padding-top: 1em;
+  }
+  ion-app.app-root .current-card__footer .timing.out {
+    padding-top: 0.5em;
+  }
+  ion-app.app-root .full-card__header {
+    display: none;
+  }
+}
+
 .section-title {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -61024,8 +61069,11 @@ summary-sidebar .full-card .week-list .active {
 }
 
 @media screen and (max-width: 600px) {
+  .section-title {
+    margin: -8px 0;
+  }
   .page-title {
-    font-size: 1.35em;
+    font-size: 1.2em;
   }
   ion-app.app-root .dashboard {
     margin: 0 -20px;
@@ -61036,6 +61084,24 @@ summary-sidebar .full-card .week-list .active {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+  }
+  .timeline-container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 0 -20px;
+    padding: 0 20px;
+    box-shadow: 0px 1px 16px 0px rgba(0, 0, 0, 0.13);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .xl-no-show {
+    display: none;
   }
 }
 
@@ -61093,6 +61159,58 @@ summary-sidebar .full-card .week-list .active {
   font-size: 1.6em;
 }
 
+@media screen and (max-width: 600px) {
+  .summaryView .back-button {
+    margin: 0;
+    padding: 0;
+  }
+  .summaryView .toolbar-content-md {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-right: 1em;
+  }
+  .summaryView .toolbar-content-md .titles {
+    font-size: 1.25em;
+    margin: 12px 0;
+  }
+  .summaryView .toolbar-content-md .month {
+    font-size: 0.8em;
+    padding-top: 0.2em;
+  }
+  ion-app.app-root .summary__content {
+    padding: 0;
+    border-bottom: 3px solid #f6f5f8;
+    padding-bottom: 1.5em;
+  }
+  ion-app.app-root .summary__content .contentTitle {
+    display: none;
+  }
+  ion-app.app-root .summary__content .day-detail {
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  ion-app.app-root .summary__content .day-detail__day {
+    display: none;
+  }
+  ion-app.app-root .summary__content p {
+    margin-bottom: 9px;
+    font-size: 1.25em;
+    margin-top: 14px;
+  }
+  ion-app.app-root .summary__content .totalTitle {
+    margin-bottom: 5px;
+    font-size: 1.65em;
+  }
+}
+
 page-style-guide .style-guide {
   width: 70%;
   margin: 0 auto;
@@ -61132,6 +61250,16 @@ page-style-guide .style-guide .code-container {
   justify-content: space-between;
 }
 
+page-style-guide .style-guide .code-container.shadow {
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+page-style-guide .style-guide .code-container.shadow > div {
+  margin-right: 1.5em;
+}
+
 page-style-guide .style-guide .boxes {
   padding: 20px;
   height: 150px;
@@ -61157,4 +61285,22 @@ page-style-guide .style-guide .box-2 {
 
 page-style-guide .style-guide .box-3 {
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.13);
+}
+
+@media screen and (max-width: 600px) {
+  ion-app.app-root .style-guide {
+    padding: 0;
+    width: 100%;
+  }
+  ion-app.app-root .style-guide h2 {
+    font-size: 1.8em;
+  }
+  ion-app.app-root .style-guide .code-container {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  ion-app.app-root .style-guide .code-container > div {
+    margin-right: 1em;
+  }
 }
