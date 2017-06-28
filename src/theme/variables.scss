@@ -23,11 +23,11 @@ $toolbar-background: #fff !default;
 
 // Heading Font-size 
 $h1-font-size: 3em;
-$h2-font-size: 2.8em;
-$h3-font-size: 2.6em;
-$h4-font-size: 2.1em;
-$h5-font-size: 1.8em;
-$h6-font-size: 1.5em;
+$h2-font-size: 2.6em;
+$h3-font-size: 2.2em;
+$h4-font-size: 1.8em;
+$h5-font-size: 1.5em;
+$h6-font-size: 1.3em;
 
 
 
@@ -50,9 +50,11 @@ $colors: ( primary: #6943bf,
 		   text: #868686,
 		   text-lighter: #aeb3b9,
 		   cloud: #fff,
+		   darken: #000,
+		   highlight:  #fafafa,
+		   text-darker: #48495a,
 		   transparent: transparent
-		);
-
+		   );
 
 
 // App iOS Variables

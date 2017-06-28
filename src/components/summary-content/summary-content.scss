@@ -4,10 +4,11 @@ summary-content {
     // ---------------------------
     .day-detail {
         border-bottom: 2px solid #f6f5f8;
-        padding-bottom: 29px;
+        padding-bottom: 32px;
+        margin-top: 2.5em;
         .detail-cols {
             flex: 1;
-            text-align: center;
+            // text-align: center;
         }
     }
 }

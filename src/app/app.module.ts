@@ -13,6 +13,10 @@ import { PopoverContentPage } from '../pages/popover/popover';
 import { SummarySidebarComponent } from '../components/summary-sidebar/summary-sidebar';
 import { SummaryContentComponent } from '../components/summary-content/summary-content';
 
+import {StyleGuidePage} from '../pages/style-guide/style-guide';
+
+import {MySummaryPage} from '../pages/my-summary/my-summary';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -20,7 +24,9 @@ import { SummaryContentComponent } from '../components/summary-content/summary-c
     ListPage,
     PopoverContentPage,
     SummarySidebarComponent,
-    SummaryContentComponent
+    SummaryContentComponent,
+    StyleGuidePage,
+    MySummaryPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,9 @@ import { SummaryContentComponent } from '../components/summary-content/summary-c
     MyApp,
     HomePage,
     ListPage,
-    PopoverContentPage
+    PopoverContentPage,
+    StyleGuidePage,
+    MySummaryPage
   ],
   providers: [
     StatusBar,
