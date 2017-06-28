@@ -65485,14 +65485,14 @@ ion-app.app-root [p-h-50] {
 
 summary-content .day-detail {
   border-bottom: 2px solid #f6f5f8;
-  padding-bottom: 25px;
+  padding-bottom: 32px;
+  margin-top: 2.5em;
 }
 
 summary-content .day-detail .detail-cols {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  text-align: center;
 }
 
 .current-card__header {
@@ -65630,7 +65630,7 @@ summary-content .day-detail .detail-cols {
 
 .full-card .week-list .total-time {
   font-size: 1.4em;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .full-card .week-list .active {
@@ -65685,6 +65685,7 @@ summary-content .day-detail .detail-cols {
   }
   ion-app.app-root .full-card__body .week-list {
     margin: 0 -16px;
+    height: auto;
   }
 }
 

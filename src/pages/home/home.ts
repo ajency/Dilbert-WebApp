@@ -1,5 +1,5 @@
-import { Component,ViewChild } from '@angular/core';
-import { NavController, NavParams,Navbar } from 'ionic-angular';
+import { Component} from '@angular/core';
+import { NavController} from 'ionic-angular';
 import { PopoverController} from 'ionic-angular';
 import { PopoverContentPage } from '../popover/popover';
 import {StyleGuidePage} from '../style-guide/style-guide';
@@ -10,7 +10,7 @@ import {StyleGuidePage} from '../style-guide/style-guide';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  @ViewChild(Navbar) navBar: Navbar;
+  // @ViewChild(Navbar) navBar: Navbar;
   constructor(public navCtrl: NavController, public popoverCtrl: PopoverController) {
 
   }
@@ -29,14 +29,14 @@ export class HomePage {
     this.navCtrl.push(StyleGuidePage,{},navOption);
   }
 
-  ionViewDidLoad() {
-    this.navBar.backButtonClick = (e:UIEvent)=>{
-    var navOption = {
-    animation: "ios-transition"
-    }
-    // todo something
-    this.navCtrl.pop(navOption);
-    }
-  }
+  // ionViewDidLoad() {
+  //   this.navBar.backButtonClick = (e:UIEvent)=>{
+  //   var navOption = {
+  //   animation: "ios-transition"
+  //   }
+    
+  //   this.navCtrl.pop(navOption);
+  //   }
+  // }
 
 }

@@ -136,7 +136,7 @@ summary-sidebar {
             }
             .total-time {
                 font-size: 1.4em;
-                font-weight: 300;
+                font-weight: 400;
             }
             .active {
                 background-color: lighten(color($colors, primary), 45%);
@@ -188,6 +188,7 @@ summary-sidebar {
             &__body{
                 .week-list{
                     margin: 0 -16px;
+                    height: auto;
                 }
             }
         }
