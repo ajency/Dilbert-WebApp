@@ -1,5 +1,8 @@
 summary-sidebar {
-    // ---------------------------
+    
+}
+
+// ---------------------------
     // CURRENT TOP LEVEL CARD -----------
     // ---------------------------
     .current-card {
@@ -142,8 +145,6 @@ summary-sidebar {
             }
         }
     }
-}
-
 @media screen and (max-width: 600px) {
     ion-app.app-root{
         .current-card{

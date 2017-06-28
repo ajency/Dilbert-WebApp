@@ -56,6 +56,13 @@ page-style-guide {
 	    .box-3{
 	        box-shadow: $shadow-3;
 	    }
+	    .element-one{
+	    	width: 30%;
+	    	margin: 0 auto;
+	    	.list-control{
+	    		height: auto;
+	    	}
+	    }
 	}
 }
 
@@ -71,6 +78,9 @@ page-style-guide {
 			& > div{
 				margin-right: 1em;
 			}
+		}
+		.element-one{
+			width: 100%;
 		}
 	}
 }

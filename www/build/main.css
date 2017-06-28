@@ -65495,7 +65495,7 @@ summary-content .day-detail .detail-cols {
   text-align: center;
 }
 
-summary-sidebar .current-card__header {
+.current-card__header {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -65505,7 +65505,7 @@ summary-sidebar .current-card__header {
   position: relative;
 }
 
-summary-sidebar .current-card .week-loader {
+.current-card .week-loader {
   position: absolute;
   bottom: -3px;
   height: 3px;
@@ -65514,17 +65514,17 @@ summary-sidebar .current-card .week-loader {
   transition: all 0.8s ease;
 }
 
-summary-sidebar .current-card__body {
+.current-card__body {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
 }
 
-summary-sidebar .current-card__body sub {
+.current-card__body sub {
   font-size: 0.55em;
 }
 
-summary-sidebar .current-card__footer {
+.current-card__footer {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -65533,7 +65533,7 @@ summary-sidebar .current-card__footer {
   border-top: 2px solid #f6f5f8;
 }
 
-summary-sidebar .current-card .timing {
+.current-card .timing {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -65541,15 +65541,15 @@ summary-sidebar .current-card .timing {
   font-size: 1.1em;
 }
 
-summary-sidebar .current-card .timing .icon {
+.current-card .timing .icon {
   vertical-align: middle;
 }
 
-summary-sidebar .current-card .timing.in {
+.current-card .timing.in {
   border-right: 2px solid #f6f5f8;
 }
 
-summary-sidebar .list-control {
+.list-control {
   height: 460px;
   overflow-y: hidden;
   overflow-x: hidden;
@@ -65560,29 +65560,29 @@ summary-sidebar .list-control {
   /* Handle */
 }
 
-summary-sidebar .list-control::-webkit-scrollbar {
+.list-control::-webkit-scrollbar {
   width: 3px;
 }
 
-summary-sidebar .list-control::-webkit-scrollbar-track {
+.list-control::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px #fff;
   border-radius: 10px;
 }
 
-summary-sidebar .list-control::-webkit-scrollbar-thumb {
+.list-control::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: #aeb3b9;
 }
 
-summary-sidebar .list-control.overflow-active {
+.list-control.overflow-active {
   overflow-y: auto;
 }
 
-summary-sidebar .list-control.overflow-active .view-more {
+.list-control.overflow-active .view-more {
   display: none;
 }
 
-summary-sidebar .full-card__header {
+.full-card__header {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -65593,7 +65593,7 @@ summary-sidebar .full-card__header {
   border-bottom: 2px solid #f6f5f8;
 }
 
-summary-sidebar .full-card .week-list .week-container {
+.full-card .week-list .week-container {
   min-height: inherit;
   font-size: inherit;
   color: inherit;
@@ -65602,17 +65602,17 @@ summary-sidebar .full-card .week-list .week-container {
   padding: 0px 20px;
 }
 
-summary-sidebar .full-card .week-list .week-container .item-inner {
+.full-card .week-list .week-container .item-inner {
   padding: 0;
   border: 0;
 }
 
-summary-sidebar .full-card .week-list .week-container .item-inner .label {
+.full-card .week-list .week-container .item-inner .label {
   margin: 0;
   padding: 0;
 }
 
-summary-sidebar .full-card .week-list__row {
+.full-card .week-list__row {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -65620,20 +65620,20 @@ summary-sidebar .full-card .week-list__row {
   padding: 10px 20px;
 }
 
-summary-sidebar .full-card .week-list .day-title {
+.full-card .week-list .day-title {
   font-size: 1.1em;
 }
 
-summary-sidebar .full-card .week-list .session-start {
+.full-card .week-list .session-start {
   font-size: 0.95em;
 }
 
-summary-sidebar .full-card .week-list .total-time {
+.full-card .week-list .total-time {
   font-size: 1.4em;
   font-weight: 300;
 }
 
-summary-sidebar .full-card .week-list .active {
+.full-card .week-list .active {
   background-color: #f2eef9;
   border-left: 3px solid #6943bf;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.13);
@@ -65975,6 +65975,15 @@ page-style-guide .style-guide .box-3 {
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.13);
 }
 
+page-style-guide .style-guide .element-one {
+  width: 30%;
+  margin: 0 auto;
+}
+
+page-style-guide .style-guide .element-one .list-control {
+  height: auto;
+}
+
 @media screen and (max-width: 600px) {
   ion-app.app-root .style-guide {
     padding: 0;
@@ -65990,5 +65999,8 @@ page-style-guide .style-guide .box-3 {
   }
   ion-app.app-root .style-guide .code-container > div {
     margin-right: 1em;
+  }
+  ion-app.app-root .style-guide .element-one {
+    width: 100%;
   }
 }
