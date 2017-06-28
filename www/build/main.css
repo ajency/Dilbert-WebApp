@@ -66000,6 +66000,11 @@ page-style-guide .style-guide .element-one .list-control {
   ion-app.app-root .style-guide .code-container > div {
     margin-right: 1em;
   }
+  ion-app.app-root .style-guide .code-container.shadow {
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
   ion-app.app-root .style-guide .element-one {
     width: 100%;
   }

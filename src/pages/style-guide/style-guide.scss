@@ -78,6 +78,9 @@ page-style-guide {
 			& > div{
 				margin-right: 1em;
 			}
+			&.shadow{
+				justify-content: center;
+			}
 		}
 		.element-one{
 			width: 100%;
