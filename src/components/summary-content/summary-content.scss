@@ -11,4 +11,11 @@ summary-content {
             // text-align: center;
         }
     }
+    @media screen and (min-width: 600px) and (max-width: 768px) {
+        .day-detail {
+            .detail-cols {
+                margin-right: 1em;
+            }
+        }
+    }
 }
