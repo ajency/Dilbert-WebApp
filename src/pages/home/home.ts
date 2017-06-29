@@ -5,7 +5,9 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { PopoverController } from 'ionic-angular';
 import { PopoverContentPage } from '../popover/popover';
+import {StyleGuidePage} from '../style-guide/style-guide';
 import * as moment from 'moment';
+
 
 @Component({
   selector: 'page-home',
@@ -26,6 +28,24 @@ export class HomePage {
       ev: myEvent
     });
   }
+  openStyle(){
+
+    var navOption = {
+      animation: "ios-transition"
+      }
+    
+    this.navCtrl.push(StyleGuidePage,{},navOption);
+  }
+
+  // ionViewDidLoad() {
+  //   this.navBar.backButtonClick = (e:UIEvent)=>{
+  //   var navOption = {
+  //   animation: "ios-transition"
+  //   }
+    
+  //   this.navCtrl.pop(navOption);
+  //   }
+  // }
 
   ionViewWillEnter() {
     this.sideBarService.getSideBarData("").then((data) => {

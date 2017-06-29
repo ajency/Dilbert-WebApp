@@ -14,7 +14,11 @@ import { ListPage } from '../pages/list/list';
 import { PopoverContentPage } from '../pages/popover/popover';
 import { SummarySidebarComponent } from '../components/summary-sidebar/summary-sidebar';
 import { SummaryContentComponent } from '../components/summary-content/summary-content';
-import { MomentModule } from 'angular2-moment';
+
+import {StyleGuidePage} from '../pages/style-guide/style-guide';
+
+import {MySummaryPage} from '../pages/my-summary/my-summary';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -22,20 +26,23 @@ import { MomentModule } from 'angular2-moment';
     ListPage,
     PopoverContentPage,
     SummarySidebarComponent,
-    SummaryContentComponent
+    SummaryContentComponent,
+    StyleGuidePage,
+    MySummaryPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
-    MomentModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     ListPage,
-    PopoverContentPage
+    PopoverContentPage,
+    StyleGuidePage,
+    MySummaryPage
   ],
   providers: [
     StatusBar,

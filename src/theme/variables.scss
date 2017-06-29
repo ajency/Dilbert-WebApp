@@ -23,11 +23,11 @@ $toolbar-background: #fff !default;
 
 // Heading Font-size 
 $h1-font-size: 3em;
-$h2-font-size: 2.8em;
-$h3-font-size: 2.6em;
-$h4-font-size: 2.1em;
-$h5-font-size: 1.8em;
-$h6-font-size: 1.5em;
+$h2-font-size: 2.6em;
+$h3-font-size: 2.2em;
+$h4-font-size: 1.8em;
+$h5-font-size: 1.5em;
+$h6-font-size: 1.3em;
 
 
 
@@ -39,7 +39,22 @@ $h6-font-size: 1.5em;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
-$colors: ( primary: #6943bf, secondary: #facf21, danger: #fa5777, light: #f4f4f4, dark: #222, success: #03b8b2, info: #32394b, mute: #f0f1f6, text: #868686, text-lighter: #aeb3b9, cloud: #fff, transparent: transparent);
+$colors: ( primary: #6943bf,
+		   secondary: #facf21,
+		   danger: #fa5777,
+		   light: #f4f4f4,
+		   dark: #222,
+		   success: #03b8b2,
+		   info: #32394b,
+		   mute: #f0f1f6,
+		   text: #868686,
+		   text-lighter: #aeb3b9,
+		   cloud: #fff,
+		   darken: #000,
+		   highllight:  #fafafa,
+		   text-darker: #48495a,
+		   transparent: transparent
+		   );
 
 
 
