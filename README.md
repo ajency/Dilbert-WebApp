@@ -18,8 +18,13 @@ $ ionic start mySideMenu sidemenu
 Then, to run it, cd into `mySideMenu` and run:
 
 ```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
+$ npm install
+$ ionic cordova platform add browser
+```
+
+And to make the production version rum:
+```bash
+$ ionic cordova build browser --prod
 ```
 
 Substitute ios for android if not on a Mac.
