@@ -65495,6 +65495,12 @@ summary-content .day-detail .detail-cols {
   flex: 1;
 }
 
+@media screen and (min-width: 600px) and (max-width: 768px) {
+  summary-content .day-detail .detail-cols {
+    margin-right: 1em;
+  }
+}
+
 .current-card__header {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
