@@ -74,15 +74,18 @@ export class SummarySidebarComponent {
     return text;
   }
   getStyle(style: string): string {
-    var style: string;
+    var styleText: string;
     switch (style) {
       case "online":
-        style = "success";
+        styleText = "success";
+        break;
+      case "none":
+        styleText = "success";
         break;
       default:
-        style = "";
+        styleText = "";
         break;
     }
-    return style;
+    return styleText;
   }
 }

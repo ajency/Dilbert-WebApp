@@ -45,7 +45,7 @@
                         </div>
                         <div class="week-list__session">
                             <span class="dis-block session-start" m-t-0 m-b-8 font-weight-4>{{getDayDate(date.start_time,3)}}</span>
-                            <span ion-text [style.color]="getStyle(date.status_flag)">{{getDayDate(date.end_time,4)}}</span>
+                            <span ion-text [ngClass]="{'text-md-success': date.status_flag == 'online'}">{{getDayDate(date.end_time,4)}}</span>
                         </div>
                         <div class="week-list__time flex-row">
                             <ion-icon name="alert" color="danger" class="visible icon-size mini"></ion-icon>
