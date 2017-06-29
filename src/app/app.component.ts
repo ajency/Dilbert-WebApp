@@ -1,11 +1,9 @@
-import { AppService } from './app-service.ts';
+import { StartHomePage } from './../pages/start-home/start-home';
+import { AppService } from './app-service';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 
 interface Window {
   addEventListener: any;
@@ -21,7 +19,7 @@ declare var window: Window;
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = 'StartHomePage';
 
   pages: Array<{ title: string, component: any }>;
 
@@ -30,10 +28,8 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Home', component: StartHomePage }
     ];
-
   }
 
   initializeApp() {

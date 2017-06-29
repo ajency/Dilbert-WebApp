@@ -1,6 +1,5 @@
 import { SideBarData, WeekData } from './summary-sidbar.data';
 import { Component, Input } from '@angular/core';
-import { MySummaryPage } from '../../pages/my-summary/my-summary';
 import { NavController } from 'ionic-angular';
 import * as moment from 'moment';
 
@@ -46,7 +45,7 @@ export class SummarySidebarComponent {
     var navOption = {
       animation: "ios-transition"
     }
-    this.navCtrl.push(MySummaryPage, {}, navOption);
+    this.navCtrl.push('MySummaryPage', {}, navOption);
   }
 
   getDayDate(date: string, option: number): string {

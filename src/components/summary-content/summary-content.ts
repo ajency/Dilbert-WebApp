@@ -1,5 +1,4 @@
 import { Dates } from './../summary-sidebar/summary-sidbar.data';
-import { DatePipe } from '@angular/common/src/pipes/date_pipe';
 import { Component, Input } from '@angular/core';
 import * as moment from 'moment';
 /**
