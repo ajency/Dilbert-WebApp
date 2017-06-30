@@ -20,7 +20,6 @@ export class SummaryContentComponent {
   @Input()
   set currentDay(passedDate: Dates) {
     this.date = passedDate;
-    console.log("current date",this.date);
     this.day= moment(this.date.date, "DD-MM-YYYY").format("dddd");
   }
 

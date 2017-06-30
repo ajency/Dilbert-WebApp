@@ -57,9 +57,8 @@ export class StartHomePage {
       this.sideBarData = data;
       console.log('data recieved', data);
       this.sideBarData.dates.forEach((date) => {
-        if (moment(date.date, "DD-MM-YYYY").diff(moment("19-06-2017", "DD-MM-YYYY"))==0) {
+        if (moment(date.date, "DD-MM-YYYY").diff(moment("23-06-2017", "DD-MM-YYYY"))==0) {
           this.currentDay = date;
-          console.log('currentDay', this.currentDay);
         }
       });
     }).catch(error => console.log("error", error));

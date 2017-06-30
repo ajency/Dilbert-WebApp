@@ -4,23 +4,23 @@
     <div class="week__current current-card">
         <div class="current-card__header flex-row">
             <p ion-text color="primary" no-margin>This Week</p>
-            <p ion-text no-margin color="text">43.43hr/45hr</p>
-            <div class="week-loader" style="width: 80%"></div>
+            <p ion-text no-margin color="text">{{currentTotal | number : '1.2-2'}}hr/{{weekData.total_hours}}hr</p>
+            <div class="week-loader" [style.width.%]="((currentTotal>45?45:currentTotal)/45)*100"></div>
         </div>
         <div class="timeline-container">
             <div class="current-card__body flex-row" p-v-25>
-                <h2 class="time" m-t-0 p-r-40>3:02<span class="xxx-small">hr</span></h2>
+                <h2 class="time" m-t-0 p-r-40>{{runningTime}}<span class="xxx-small">hr</span></h2>
                 <div class="day">
                     <p ion-text color="primary" no-margin m-b-5 class="day-title">Today</p>
-                    <span ion-text color="text-darker">Friday 12, May</span>
+                    <span ion-text color="text-darker">{{getDayDate(currentDay.date,6)}}</span>
                 </div>
             </div>
             <div class="current-card__footer flex-row">
                 <div class="timing in" p-h-12 p-v-12>
-                    <i class="custom-icon indoor"></i> <span>9:35am</span>
+                    <i class="custom-icon indoor"></i> <span>{{getDayDate(currentDay.start_time,3)}}</span>
                 </div>
                 <div class="timing out" p-h-12 p-v-12>
-                    <i class="custom-icon outdoor"></i> <span ion-text color="success">Online</span>
+                    <i class="custom-icon outdoor"></i> <span ion-text [ngClass]="{'text-md-success': currentDay.status_flag == 'online'}">{{getDayDate(currentDay.end_time,4)}}</span>
                 </div>
             </div>
         </div>
