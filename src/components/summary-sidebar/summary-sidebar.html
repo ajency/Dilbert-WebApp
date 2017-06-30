@@ -37,7 +37,7 @@
         <div class="full-card__body">
             <!-- Week list -->
             <ul class="week-list list-control overflow-active">
-                <button ion-item class="week-container" m-v-15 (click)="openSummary()" *ngFor="let date of data.dates">
+                <button ion-item class="week-container" m-v-15 (click)="openSummary(date)" *ngFor="let date of data.dates">
                     <li class="week-list__row flex-row">
                         <div class="week-list__day">
                             <p class="day-title" ion-text color="darken" m-t-0 m-b-8 font-weight-4>{{getDayDate(date.date,1)}}</p>

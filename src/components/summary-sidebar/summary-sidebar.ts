@@ -1,5 +1,5 @@
 import { SideBarData, WeekData, Dates } from './summary-sidbar.data';
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output,EventEmitter } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import * as moment from 'moment';
 import { Observable } from 'rxjs/Rx';
@@ -20,6 +20,7 @@ export class SummarySidebarComponent {
   currentTotal: number = 0;
   currentDay: Dates;
   runningTime: string = '0.0';
+  @Output() OnSelect = new EventEmitter<Dates>() ;
 
   @Input()
   set sideBarData(passedData: SideBarData) {
@@ -52,9 +53,8 @@ export class SummarySidebarComponent {
           let timer = Observable.timer(0, 60000);// updates the timer every minute
           timer.subscribe(t => {
             var duration = moment.duration(moment().diff(moment(this.currentDay.start_time, "hh:mm:ss")));
-            var hours = duration.asHours();
-            var minutes = duration.minutes();
-            this.runningTime = hours.toFixed(2)/*+"."+minutes*/;
+            var hours = duration.hours();
+            this.runningTime = hours + "." +moment(duration.minutes(),"m").format("mm");
           });
         }
       }
@@ -66,11 +66,12 @@ export class SummarySidebarComponent {
   constructor(public navCtrl: NavController) {
   }
 
-  openSummary() {
+  openSummary( currentDay: Dates) {
+    this.OnSelect.emit(currentDay);
     var navOption = {
       animation: "ios-transition"
     }
-    this.navCtrl.push('MySummaryPage', {}, navOption);
+    //this.navCtrl.push('MySummaryPage', {"currentDate":currentDay}, navOption);
   }
 
   //display and format the time and date for the list item

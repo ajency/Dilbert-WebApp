@@ -42,6 +42,9 @@ export class StartHomePage {
     this.navCtrl.push('StyleGuidePage',{},navOption);
   }
 
+  OnSelect(currentDay:Dates) {
+    this.currentDay= currentDay;
+  }
   // ionViewDidLoad() {
   //   this.navBar.backButtonClick = (e:UIEvent)=>{
   //   var navOption = {
