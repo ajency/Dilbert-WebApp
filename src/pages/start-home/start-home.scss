@@ -43,6 +43,12 @@ page-start-home {}
     }
 }
 
+@media screen and (min-width: 1280px) and (max-width: 1400px) {
+    .summary__sidebar{
+        flex: 0.8;
+    }     
+}
+
 @media screen and (max-width: 600px) {
     .section-title {
         margin: -8px 0;

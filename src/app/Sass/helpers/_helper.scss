@@ -51,6 +51,19 @@
 }
 
 
+.direction-col{
+    flex-direction: column;
+}
+
+.relative{
+    position: relative;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+
 // ---------------------------
 // MARGIN & PADDING LOOP -----------
 // ---------------------------
