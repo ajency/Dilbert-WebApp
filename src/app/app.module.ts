@@ -8,12 +8,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { HeaderComponent } from '../components/header/header';
 
 @NgModule({
   declarations: [
-    MyApp,
-    HeaderComponent,
+    MyApp
   ],
   imports: [
     BrowserModule,
