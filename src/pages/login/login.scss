@@ -1,7 +1,10 @@
 page-login {
-    .login-container{
-        background-color: #f9f9f9;
+    @media screen and (min-width: 768px){
+        .login-container{
+            background-color: #f9f9f9;
+        } 
     }
+
 	.login-card{
 		display: flex;
     	align-items: center;
@@ -44,6 +47,7 @@ page-login {
     	height: auto;
     	font-size: 1.15em;
     	margin-bottom: 0;
+        text-transform: inherit;
     	@media screen and (max-width: 600px){
     		font-size: 1.1em;
     	}
@@ -51,4 +55,7 @@ page-login {
 	.sign-text{
 		color: #7b7b7b;
 	}
+    hr{
+        margin: 1.5em 0;
+    }
 }
