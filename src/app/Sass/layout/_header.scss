@@ -4,6 +4,11 @@
 
 
 // Overwriting default header box shadow image
+
+ion-header{
+	background-color: #fff;
+}
+
 .main-header {
     &:after {
         background-image: none;
